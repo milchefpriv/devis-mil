@@ -1,0 +1,2681 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://milchefpriv.github.io/Demande-de-devis/MIL.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Devis — MiL Traiteur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0c0b09;
+  --gold: #c9a96e;
+  --gold2: #e8d5b0;
+  --gold3: #f5edd8;
+  --stone: #8c8278;
+  --smoke: #f2ede6;
+  --white: #ffffff;
+  --red: #b94040;
+  --surface: #faf8f4;
+  --border: rgba(201,169,110,0.2);
+  --r: 16px;
+  --r-sm: 10px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--smoke);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100dvh;
+}
+
+/* SIDEBAR (desktop only) */
+.sidebar { display: none; }
+.sticky-bar-mobile {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--ink);
+  padding: 14px 20px calc(14px + var(--safe-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(201,169,110,0.25);
+}
+
+/* STICKY BAR */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--ink);
+  padding: 14px 20px calc(14px + var(--safe-bottom));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(201,169,110,0.25);
+}
+.sb-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.78); }
+.sb-price { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 800; color: var(--gold); line-height: 1; letter-spacing: 0.01em; }
+.sb-sub { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 1px; }
+.btn-confirm {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.15s;
+}
+.btn-confirm:active { transform: scale(0.96); background: #b8924a; }
+
+/* PAGE */
+.page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding-bottom: calc(100px + var(--safe-bottom));
+}
+
+/* HERO */
+.hero {
+  background: var(--ink);
+  padding: 52px 24px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,169,110,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.hero-sub {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 28px;
+}
+.hero-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+.hero-pill {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,169,110,0.25);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.78);
+  letter-spacing: 0.03em;
+}
+.hero-pill span { color: var(--gold2); font-weight: 500; }
+
+/* CARD SECTION */
+.section {
+  margin: 10px 12px 0;
+  background: var(--white);
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.section-head {
+  padding: 18px 20px 0;
+}
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* FIELDS */
+.fields {
+  padding: 14px 20px 4px;
+  display: grid;
+  gap: 4px;
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; }
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: var(--smoke);
+  border-radius: var(--r-sm);
+  border: 1.5px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+}
+.field:focus-within { background: #fff; border-color: var(--gold); }
+.field label { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); font-weight: 500; }
+.field input, .field select {
+  border: none; background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; color: var(--ink);
+  outline: none; width: 100%;
+}
+.field input::placeholder { color: #ccc; }
+.field select { cursor: pointer; }
+.field-full { grid-column: 1 / -1; }
+
+/* STEPPER */
+.pers-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 18px;
+}
+.pers-label { font-size: 14px; color: var(--stone); }
+.pers-label strong { color: var(--ink); font-weight: 600; }
+.stepper {
+  display: flex; align-items: center;
+  background: var(--smoke);
+  border-radius: 50px;
+  overflow: hidden;
+}
+.step-btn {
+  width: 40px; height: 40px;
+  border: none; background: transparent;
+  font-size: 22px; font-weight: 300;
+  color: var(--ink); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.step-btn:active { background: var(--gold3); }
+.step-val { min-width: 44px; text-align: center; font-size: 17px; font-weight: 600; }
+
+/* SCENARIO PILLS */
+.scen-wrap { padding: 14px 20px; }
+.scen-pills {
+  display: flex; gap: 6px;
+  overflow-x: auto; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+}
+.scen-pills::-webkit-scrollbar { display: none; }
+.spill {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1.5px solid var(--gold2);
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px; font-weight: 500;
+  color: var(--stone); cursor: pointer;
+  transition: all 0.2s; white-space: nowrap;
+}
+.spill.active { background: var(--ink); border-color: var(--ink); color: var(--white); }
+
+/* FORMULE LABEL */
+.formule-label {
+  padding: 0 20px 10px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* CAROUSEL */
+.fcarousel {
+  display: flex; gap: 10px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 0 20px 20px;
+  scroll-snap-type: x mandatory;
+}
+.fcarousel::-webkit-scrollbar { display: none; }
+
+.fcard {
+  flex: 0 0 calc(100% - 48px);
+  scroll-snap-align: start;
+  border-radius: var(--r);
+  border: 2px solid var(--gold2);
+  background: var(--surface);
+  cursor: pointer;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.18s, background 0.25s;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 2px 12px rgba(201,169,110,0.10);
+}
+.fcard::after {
+  content: 'Voir';
+  display: block;
+  margin: 0 14px 14px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--gold);
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.fcard.selected::after {
+  content: 'Retirer';
+  background: var(--gold);
+  color: var(--ink);
+}
+.fcard:active { transform: scale(.985); }
+.fcard.selected {
+  border-color: var(--gold);
+  box-shadow: 0 4px 24px rgba(201,169,110,0.28);
+  background: #fffaf0;
+}
+
+.fcard-head {
+  padding: 18px 18px 14px;
+  background: var(--smoke);
+  transition: background 0.25s;
+  position: relative;
+  display: grid;
+  grid-template-rows: 46px 32px 40px auto;
+  min-height: 168px;
+  align-items: start;
+}
+.fcard-head .fcard-price-row {
+  align-self: end;
+}
+.fcard.selected .fcard-head { background: var(--ink); }
+
+.fcard-check {
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold2);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; color: transparent;
+  transition: all 0.2s;
+}
+.fcard.selected .fcard-check { background: var(--gold); border-color: var(--gold); color: var(--white); }
+
+.fcard-badge {
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gold); background: var(--gold3);
+  padding: 4px 9px; border-radius: 6px;
+  display: inline-flex; align-items: center; gap: 5px;
+  width: fit-content; min-height: 24px; margin: 0; font-weight: 700;
+}
+.fcard-badge.ghost {
+  visibility: hidden;
+  pointer-events: none;
+}
+.fcard-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; font-weight: 600;
+  color: var(--ink); line-height: 1.2;
+  min-height: 43px; margin: 0; transition: color 0.25s;
+}
+.fcard.selected .fcard-name { color: var(--gold); }
+.fcard-tagline {
+  font-size: 12px; color: var(--stone);
+  font-style: italic; margin: 0;
+  min-height: 34px; display: flex; align-items: flex-start;
+  transition: color 0.25s;
+}
+.fcard.selected .fcard-tagline { color: rgba(255,255,255,0.72); }
+
+.fcard-price-row { display: flex; align-items: center; justify-content: space-between; }
+.fcard-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  font-size: 24px;
+  color: var(--ink); transition: color 0.25s; line-height: 1;
+}
+.fcard-price sub { font-size: 13px; font-weight: 300; color: var(--stone); }
+.fcard.selected .fcard-price { color: var(--white); }
+.fcard.selected .fcard-price sub { color: rgba(255,255,255,0.78); }
+
+.fcard-pieces {
+  font-size: 11px; font-weight: 500; color: var(--stone);
+  background: var(--white); border: 1px solid var(--gold2);
+  padding: 4px 10px; border-radius: 20px; transition: all 0.25s;
+}
+.fcard.selected .fcard-pieces {
+  background: rgba(201,169,110,0.15);
+  border-color: rgba(201,169,110,0.5);
+  color: var(--gold);
+}
+
+.fcard-body { padding: 12px 14px 14px; }
+.fcard-compo {
+  font-size: 11px; color: var(--stone);
+  font-style: italic;
+  padding: 8px 12px;
+  background: var(--smoke);
+  border-radius: 8px;
+  margin-bottom: 12px; line-height: 1.5;
+}
+.fcard-compo strong { color: var(--ink); font-style: normal; font-weight: 600; }
+
+.fsub-label {
+  font-size: 9px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold);
+  font-weight: 600; margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fpieces { list-style: none; margin-bottom: 12px; }
+.fpieces li {
+  padding: 5px 0;
+  border-bottom: 1px solid var(--smoke);
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 6px;
+}
+.fpieces li:last-child { border-bottom: none; }
+.fp-name { font-size: 12.5px; color: var(--ink); font-weight: 500; flex: 1; line-height: 1.18; }
+.fp-name em {
+  display: block;
+  font-size: 10px;
+  color: var(--stone);
+  font-style: italic;
+  margin-top: 1px;
+  line-height: 1.18;
+  max-height: 2.36em;
+  overflow: hidden;
+}
+.tag-prem { font-size: 8px; font-weight: 600; color: var(--gold); background: var(--gold3); padding: 1px 5px; border-radius: 4px; letter-spacing: 0.05em; flex-shrink: 0; margin-top: 1px; }
+.tag-hot { font-size: 8px; font-weight: 600; color: #b94040; background: #fdecea; padding: 1px 5px; border-radius: 4px; letter-spacing: 0.05em; flex-shrink: 0; margin-top: 1px; }
+
+.fcard-incl {
+  font-size: 11px; color: var(--stone);
+  background: var(--smoke); border-radius: 8px;
+  padding: 8px 12px; line-height: 1.6;
+}
+.fcard-incl strong { color: var(--ink); font-weight: 600; }
+
+/* SÉLECTION DES PIÈCES */
+.piece-builder { padding: 0 20px 20px; }
+.piece-builder.empty {
+  padding: 0 20px 20px;
+  color: var(--stone);
+  font-size: 13px;
+}
+.piece-guide {
+  background: var(--ink);
+  color: var(--white);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.piece-guide-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.piece-guide-text { font-size: 12px; color: rgba(255,255,255,0.76); line-height: 1.55; }
+
+.moment-choice {
+  padding: 0 20px 14px;
+}
+.moment-choice-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  background: var(--smoke);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 10px;
+}
+.moment-choice-title {
+  font-size: 10px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  padding: 2px 4px 0;
+}
+.moment-choice-btn {
+  width: 100%;
+  text-align: left;
+  border: 1.5px solid var(--gold2);
+  background: var(--white);
+  color: var(--stone);
+  border-radius: 14px;
+  padding: 11px 12px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all .2s;
+}
+.moment-choice-btn strong {
+  display: block;
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.moment-choice-btn span {
+  display: block;
+  font-size: 11px;
+  color: var(--stone);
+  margin-top: 3px;
+  line-height: 1.35;
+}
+.moment-choice-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+.moment-choice-btn.active strong { color: var(--gold); }
+.moment-choice-btn.active span { color: rgba(255,255,255,.72); }
+@media (min-width: 641px) {
+  .moment-choice { padding: 0 24px 16px; }
+  .moment-choice-inner { grid-template-columns: 1fr 1fr; }
+  .moment-choice-title { grid-column: 1 / -1; }
+}
+
+.piece-progress { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 10px 0 12px; }
+.piece-stat {
+  background: var(--smoke);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 8px;
+  text-align: center;
+}
+.piece-stat strong { display: block; font-size: 16px; color: var(--ink); line-height: 1; }
+.piece-stat span { display: block; font-size: 9px; letter-spacing: .09em; text-transform: uppercase; color: var(--stone); margin-top: 4px; }
+.piece-stat.ok { border-color: var(--gold); background: var(--gold3); }
+.piece-tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 8px; }
+.piece-tabs::-webkit-scrollbar { display: none; }
+.piece-tab {
+  flex-shrink: 0;
+  border: 1.5px solid var(--gold2);
+  background: var(--white);
+  color: var(--stone);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.piece-tab.active { background: var(--ink); border-color: var(--ink); color: var(--white); }
+.piece-list { display: grid; gap: 7px; }
+.piece-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 9px;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, opacity .2s;
+}
+.piece-row.selected { border-color: var(--gold); background: var(--white); box-shadow: 0 2px 12px rgba(201,169,110,.12); }
+.piece-row.disabled { opacity: .45; cursor: not-allowed; }
+.piece-check {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold2);
+  background: var(--white);
+  color: transparent;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; flex-shrink: 0; margin-top: 1px;
+}
+.piece-row.selected .piece-check { background: var(--gold); border-color: var(--gold); color: var(--white); }
+.piece-info { flex: 1; min-width: 0; }
+.piece-name { font-size: 12.5px; font-weight: 600; color: var(--ink); line-height: 1.18; }
+.piece-desc {
+  font-size: 10px;
+  color: var(--stone);
+  font-style: italic;
+  margin-top: 1px;
+  line-height: 1.18;
+  max-height: 2.36em;
+  overflow: hidden;
+}
+.piece-tag { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; border-radius: 4px; padding: 1px 5px; margin-top: 1px; flex-shrink: 0; }
+.piece-tag.premium { color: var(--gold); background: var(--gold3); }
+.piece-tag.decouverte { color: #5d6a22; background: #eef4d6; }
+.piece-tag.chaud { color: var(--red); background: #fdecea; }
+.dip-select { margin-top: 12px; background: var(--smoke); border-radius: 12px; padding: 12px; }
+.dip-title { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 8px; }
+.dip-grid { display: flex; flex-wrap: wrap; gap: 6px; }
+.dip-pill {
+  border: 1px solid var(--gold2);
+  background: var(--white);
+  color: var(--stone);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  cursor: pointer;
+}
+.dip-pill.selected { background: var(--gold); color: var(--ink); border-color: var(--gold); font-weight: 700; }
+.piece-alert { margin-top: 10px; font-size: 12px; color: var(--red); background:#fdecea; border-radius: 8px; padding: 8px 10px; }
+@media (min-width: 641px) {
+  .piece-builder { padding: 0 24px 24px; }
+  .piece-list { grid-template-columns: 1fr 1fr; }
+}
+
+/* CORRECTIFS CONSOLIDÉS — vignettes, badges, carte */
+.piece-section-title{
+  grid-column:1 / -1;
+  margin:10px 0 2px;
+  padding:7px 10px;
+  border-radius:999px;
+  background:var(--ink);
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+.piece-section-title.decouverte-title{ margin-top:14px; }
+.piece-section-title.live-title{ color:#d9b4ff; }
+
+.voir-carte-wrap{ display:block; width:100%; padding:10px 20px 20px; clear:both; }
+.btn-voir-carte{
+  width:100%; padding:13px 16px; border:1.5px solid var(--gold); border-radius:999px;
+  background:var(--ink); color:var(--gold); font-family:'Poppins', sans-serif;
+  font-size:13px; font-weight:700; letter-spacing:.04em; cursor:pointer;
+  display:flex; align-items:center; justify-content:center; gap:8px; transition:background .2s;
+}
+.btn-voir-carte:active{ background:var(--gold3); }
+.btn-voir-carte::after{ content:'→'; }
+
+.piece-list{ display:grid; grid-template-columns:1fr; gap:10px; }
+.piece-row{
+  display:grid; grid-template-columns:24px minmax(0,1fr) 172px; align-items:start; gap:10px;
+  min-height:74px; padding:12px; overflow:hidden;
+}
+.piece-check{ grid-column:1; grid-row:1 / span 2; }
+.piece-info{ grid-column:2; min-width:0; padding-right:4px; }
+.piece-name,.piece-desc{ overflow-wrap:anywhere; }
+.piece-tags{
+  grid-column:3; width:172px; max-width:172px; display:grid; grid-template-columns:1fr;
+  justify-items:end; align-items:start; gap:5px; margin:0;
+}
+.piece-tags-main,.piece-tags-extra{
+  width:100%; min-width:0; display:flex; flex-wrap:wrap; justify-content:flex-end;
+  align-items:flex-start; gap:5px;
+}
+.piece-tag,.tag-hot,.tag-live{
+  display:inline-flex; align-items:center; justify-content:center; height:19px; padding:0 8px;
+  border-radius:999px; font-size:7px; font-weight:800; line-height:1; letter-spacing:.035em;
+  text-transform:uppercase; white-space:nowrap; width:auto; max-width:100%;
+}
+.piece-tag.premium,.piece-tag.decouverte,.piece-tag.live{ min-width:92px; }
+.piece-tag.premium{ color:#b9903f; background:#f6ecd7; }
+.piece-tag.decouverte{ color:#56731e; background:#edf6d8; }
+.piece-tag.live,.tag-live{ color:#7c3aa8; background:#f2e4fb; }
+.piece-tag.reheating,.tag-hot{ color:#b94040; background:#fdecea; }
+.piece-tag.vege{ color:#45631f; background:#eaf3d6; }
+.piece-tag.vegan{ color:#246b3d; background:#def3e4; }
+.piece-tag.viande{ color:#7a5334; background:#f2e7dc; }
+.piece-tag.poisson{ color:#28607d; background:#e1f0f7; }
+.piece-tag.fr{ color:#4968ad; background:#e8eefc; }
+.piece-progress.has-live{ grid-template-columns:repeat(4,1fr); }
+
+.box-card{ min-height:190px; }
+.box-card-title-area{ display:grid; grid-template-rows:auto 38px; row-gap:5px; }
+.box-badges{ display:flex; flex-wrap:wrap; align-content:flex-start; gap:4px; min-height:38px; }
+.box-badge{ height:17px; display:inline-flex; align-items:center; border-radius:999px; padding:0 6px; font-size:7px; line-height:1; white-space:nowrap; }
+.box-badge-vege{ background:#eaf3d6; color:#45631f; }
+.box-badge-vegan{ background:#def3e4; color:#246b3d; }
+.box-badge-viande{ background:#f2e7dc; color:#7a5334; }
+.box-badge-poisson{ background:#e1f0f7; color:#28607d; }
+.box-badge-frais{ background:#e3f5fb; color:#0277a8; }
+
+@media (min-width:641px){
+  .piece-list{ grid-template-columns:1fr 1fr; }
+  .piece-row{ grid-template-columns:24px minmax(0,1fr) 150px; }
+  .piece-tags{ width:150px; max-width:150px; }
+  .piece-tag.premium,.piece-tag.decouverte,.piece-tag.live{ min-width:86px; }
+  .voir-carte-wrap{ padding:0 24px 24px; }
+}
+@media (max-width:520px){
+  .piece-row{ grid-template-columns:24px minmax(0,1fr); gap:9px; }
+  .piece-tags{ grid-column:2; width:100%; max-width:100%; justify-items:end; margin-top:4px; }
+  .piece-tags-main,.piece-tags-extra{ justify-content:flex-end; }
+  .piece-progress.has-live{ grid-template-columns:repeat(2,1fr); }
+  .piece-tag.premium,.piece-tag.decouverte,.piece-tag.live{ min-width:88px; }
+}
+
+/* OPTIONS */
+.opt-list { padding: 12px 20px 20px; }
+.opt-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 12px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(201,169,110,0.22);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.opt-item:last-child { border-bottom: 1px solid rgba(201,169,110,0.22); margin-bottom: 0; }
+.opt-item:not(.off) { background: var(--white); border-color: var(--gold); box-shadow: 0 2px 12px rgba(201,169,110,.16); }
+.opt-item.off { opacity: 1; }
+.opt-item.selected {
+  background: #fffaf0;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 18px rgba(201,169,110,.22);
+}
+.opt-info { flex: 1; min-width: 0; }
+.opt-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.opt-desc { font-size: 11px; color: #5f574f; margin-top: 1px; line-height: 1.4; }
+.opt-price { font-size: 11px; color: var(--gold); margin-top: 3px; font-weight: 500; }
+.opt-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.opt-total { font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 0.01em; min-width: 52px; text-align: right; }
+.opt-total.zero { color: var(--stone); font-weight: 400; }
+
+.qty-row { display: flex; align-items: center; background: var(--smoke); border-radius: 50px; overflow: hidden; border: 1px solid var(--gold2); }
+.opt-item.selected .qty-row { background: var(--white); border-color: var(--gold); }
+.q-btn {
+  width: 30px; height: 30px; border: none; background: transparent;
+  font-size: 18px; font-weight: 300; color: var(--ink); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.q-btn:active { background: var(--gold3); }
+.q-val { font-size: 14px; font-weight: 700; min-width: 28px; text-align: center; color: var(--stone); }
+.opt-item.selected .q-val { color: var(--ink); }
+
+/* TOGGLE */
+.tog {
+  display: none;
+  width: 44px; height: 26px;
+  border-radius: 13px;
+  background: #d8cec2;
+  border: 1.5px solid var(--stone);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tog.on { background: var(--gold); border-color: var(--gold); }
+.tog::after {
+  content: '';
+  position: absolute; top: 2px; left: 2px;
+  width: 18px; height: 18px;
+  border-radius: 50%; background: var(--white);
+  transition: left 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.tog.on::after { left: calc(100% - 20px); }
+
+/* BOX À PARTAGER */
+.box-grid {
+  padding: 8px 16px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.box-card {
+  background: var(--smoke);
+  border-radius: var(--r);
+  border: 1.5px solid transparent;
+  padding: 14px 12px 12px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.box-card.selected {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: 0 2px 14px rgba(201,169,110,0.13);
+}
+.box-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px;
+}
+.box-card-title-area { flex: 1; min-width: 0; }
+.box-card-name {
+  font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.25;
+  margin-bottom: 4px;
+}
+.box-badge {
+  font-size: 8px; font-weight: 700; letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 6px; border-radius: 4px;
+  display: inline-block;
+}
+.box-badge-convivial  { background: #fde8c8; color: #a0621a; }
+.box-badge-signature  { background: #e4edfc; color: #2c5cad; }
+.box-badge-classique  { background: #e8f5e9; color: #2e7d32; }
+.box-badge-frais      { background: #e3f5fb; color: #0277a8; }
+.box-badge-aperitif   { background: #fce8f0; color: #ad2c61; }
+.box-badge-leger      { background: #f0f4e8; color: #5a7a1e; }
+.box-badge-equilibre  { background: #f3ecfb; color: #6a3db5; }
+.box-badge-brunch     { background: #fff3e0; color: #b85c00; }
+.box-tog-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 3px; flex-shrink: 0;
+}
+.box-tog {
+  width: 38px; height: 22px; border-radius: 11px;
+  background: #e0d9d0; border: none;
+  cursor: pointer; position: relative; flex-shrink: 0;
+  transition: background 0.2s;
+}
+.box-tog.on { background: var(--gold); }
+.box-tog::after {
+  content: '';
+  position: absolute; top: 2px; left: 2px;
+  width: 16px; height: 16px;
+  border-radius: 50%; background: var(--white);
+  transition: left 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+}
+.box-tog.on::after { left: calc(100% - 18px); }
+.box-tog-minus {
+  font-size: 15px; color: var(--stone); line-height: 1; font-weight: 300;
+}
+.box-card-desc {
+  font-size: 11px; color: var(--stone);
+  font-style: italic; line-height: 1.45;
+}
+.box-card-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16px; font-weight: 700;
+  color: var(--gold); margin-top: 2px; letter-spacing: 0.01em;
+}
+.box-card-price span { font-weight: 400; color: var(--stone); font-size: 11px; }
+.box-card-bottom {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 8px; margin-top: 2px;
+}
+.box-tog-minus { font-size: 15px; color: var(--stone); line-height: 1; font-weight: 300; }
+.box-counter {
+  display: flex; align-items: center; gap: 4px;
+  background: var(--smoke); border-radius: 50px;
+  padding: 3px 6px 3px 3px;
+  border: 1px solid var(--gold2);
+}
+.box-c-btn {
+  width: 26px; height: 26px; border: none;
+  background: var(--white); border-radius: 50%;
+  font-size: 16px; font-weight: 400; color: var(--ink);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: background 0.15s;
+}
+.box-c-btn:active { background: var(--gold3); }
+.box-c-val { font-size: 13px; font-weight: 700; min-width: 18px; text-align: center; }
+.box-c-total { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; padding-left: 2px; }
+
+/* LIENS */
+.hero-actions { margin-top: 20px; }
+
+/* NOTE */
+.note-wrap { padding: 14px 20px 20px; }
+.note-area {
+  width: 100%;
+  background: var(--smoke);
+  border: 1.5px solid transparent;
+  border-radius: var(--r-sm);
+  padding: 12px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px; color: var(--ink);
+  resize: none; min-height: 80px;
+  outline: none; transition: border-color 0.2s, background 0.2s;
+}
+.note-area:focus { border-color: var(--gold); background: var(--white); }
+.note-area::placeholder { color: #c8c2b8; }
+
+/* TOTAL */
+.total-detail { padding: 14px 20px; }
+.tline {
+  display: flex; justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--smoke);
+  font-size: 14px;
+}
+.tline:last-child { border-bottom: none; }
+.tline .tl { color: var(--stone); }
+.tline .tv { font-weight: 500; }
+.tline.final { padding-top: 14px; margin-top: 4px; border-top: 1px solid var(--border); border-bottom: none; }
+.tline.final .tl { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+.tline.final .tv { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: 0.01em; color: var(--ink); }
+
+.min-warn {
+  display: none; font-size: 12px; color: var(--red);
+  font-style: italic; padding: 8px 12px;
+  background: #fdecea; border-radius: 8px; margin-top: 8px;
+}
+.min-warn.show { display: block; }
+
+/* CONDITIONS */
+.conds {
+  margin: 10px 12px 0;
+  background: var(--ink);
+  border-radius: var(--r);
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+.cond-title { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 6px; }
+.cond-text { font-size: 11px; color: rgba(255,255,255,0.82); line-height: 1.55; }
+
+/* ACTIONS */
+.actions {
+  margin: 10px 12px 0;
+  display: flex; gap: 8px;
+}
+.btn-act {
+  flex: 1; padding: 13px;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 600;
+  cursor: pointer; transition: all 0.15s;
+  border: 1.5px solid var(--gold2);
+  background: var(--white);
+  color: var(--stone); text-align: center;
+}
+.btn-act:active { background: var(--smoke); transform: scale(0.97); }
+
+/* =============================================
+   RESPONSIVE — Tablette  ≥ 641px
+   ============================================= */
+@media (min-width: 641px) {
+  body { padding: 2rem 1rem; font-size: 16px; }
+
+  .page {
+    max-width: 680px;
+    padding-bottom: 2rem;
+  }
+
+  .hero {
+    border-radius: var(--r) var(--r) 0 0;
+    padding: 52px 36px 40px;
+  }
+  .hero-brand { font-size: 64px; }
+
+  .section { margin: 12px 0 0; }
+  .conds    { margin: 12px 0 0; }
+  .actions  { margin: 12px 0 0; }
+
+  .fields { padding: 18px 24px 6px; gap: 6px; }
+
+  .fcarousel { padding: 0 24px 24px; gap: 12px; }
+  .fcard { flex: 0 0 calc(48% - 6px); }
+  .fcard-head { min-height: 168px; }
+  .fcard-name { min-height: 44px; display: flex; align-items: flex-start; }
+  .fcard-tagline { min-height: 34px; display: flex; align-items: flex-start; }
+
+  .opt-list { padding: 16px 24px 24px; }
+
+  .sticky-bar-mobile {
+    position: static;
+    border-radius: var(--r);
+    margin: 12px 0 0;
+    border: 1px solid rgba(201,169,110,0.25);
+    padding: 16px 24px;
+  }
+  .sticky-bar {
+    position: static;
+    border-radius: var(--r);
+    margin: 12px 0 0;
+    border: 1px solid rgba(201,169,110,0.25);
+    padding: 16px 24px;
+  }
+  .sb-price { font-size: 32px; }
+
+  .modal-overlay { align-items: center; }
+  .modal {
+    border-radius: 20px;
+    max-width: 480px;
+    padding: 36px 32px;
+    animation: fadeScaleIn 0.22s ease;
+  }
+  .modal-handle { display: none; }
+  @keyframes fadeScaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+}
+
+/* =============================================
+   RESPONSIVE — Desktop  ≥ 1024px
+   ============================================= */
+@media (min-width: 1024px) {
+  body { padding: 3rem 2rem; }
+
+  .page {
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    column-gap: 24px;
+    align-items: start;
+    padding-bottom: 3rem;
+  }
+
+  /* Hero pleine largeur */
+  .hero {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    border-radius: var(--r);
+    padding: 56px 44px 44px;
+  }
+  .hero-brand { font-size: 76px; }
+  .hero::before { width: 340px; height: 340px; top: -90px; right: -90px; }
+
+  /* Colonne gauche : toutes les sections principales */
+  .col-main { grid-column: 1; }
+
+  /* Sidebar sticky : colonne droite */
+  .sidebar {
+    grid-column: 2;
+    grid-row: 2 / span 10;
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Récap sticky colonne droite */
+  .col-side {
+    margin-top: 0;
+  }
+
+  /* Conditions & actions intégrés dans sidebar */
+  .sidebar .conds   { margin: 0; }
+  .sidebar .actions { margin: 0; flex-direction: column; }
+  .sidebar .btn-act { width: 100%; }
+  .conds   { grid-column: unset; }
+  .actions { grid-column: unset; }
+
+  /* Sticky bar dans sidebar (pas fixe) */
+  .sticky-bar {
+    position: static;
+    border-radius: var(--r);
+    margin: 0;
+    padding: 18px 22px;
+    background: var(--ink);
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+
+  /* Mobile sticky bar cachée sur desktop */
+  .sticky-bar-mobile { display: none; }
+
+  /* Carousel : 3 cartes côte à côte */
+  .fcarousel { padding: 0 24px 24px; }
+  .fcard { flex: 0 0 calc(33.33% - 14px); }
+  /* Alignement propre des formules desktop : titre en haut, prix en bas */
+  .fcard-head { min-height: 172px; }
+  .fcard-name { min-height: 44px; display: flex; align-items: flex-start; }
+  .fcard-tagline { min-height: 34px; display: flex; align-items: flex-start; }
+
+  /* Hover desktop */
+  .fcard:hover:not(.selected) { border-color: var(--gold2); box-shadow: 0 2px 12px rgba(201,169,110,0.1); }
+  .btn-voir-carte:hover { background: var(--gold3); }
+  .btn-confirm:hover { background: #b8924a; }
+  .btn-act:hover { background: var(--smoke); color: var(--ink); }
+  .spill:hover:not(.active) { background: var(--smoke); }
+
+  /* Total */
+  .total-detail { padding: 18px 24px; }
+  .tline.final .tv { font-size: 34px; }
+
+  /* Modal */
+  .modal { max-width: 520px; padding: 40px 36px; }
+}
+
+@media print {
+  .sticky-bar, .sticky-bar-mobile, .sidebar, .actions, .btn-voir-carte { display: none !important; }
+  .page { padding-bottom: 0; }
+  body { background: white; }
+  .section, .conds { margin: 6px 0 0; border-radius: 0; }
+}
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(12,11,9,0.7);
+  backdrop-filter: blur(4px);
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--white);
+  border-radius: 24px 24px 0 0;
+  padding: 28px 24px calc(28px + var(--safe-bottom));
+  width: 100%; max-width: 520px;
+  animation: slideUp 0.28s cubic-bezier(0.32,0.72,0,1);
+}
+@keyframes slideUp { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.modal-handle { width: 36px; height: 4px; background: var(--gold2); border-radius: 2px; margin: 0 auto 24px; }
+.modal-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px; color: var(--ink);
+  margin-bottom: 4px;
+}
+.modal-sub { font-size: 13px; color: var(--stone); margin-bottom: 20px; }
+.modal-recap {
+  background: var(--smoke); border-radius: 12px;
+  padding: 14px 16px; margin-bottom: 20px;
+  font-size: 13px; color: var(--stone); line-height: 1.8;
+}
+.modal-recap strong { color: var(--ink); }
+.modal-recap .recap-total {
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px; color: var(--gold);
+  margin-top: 6px; display: block;
+}
+.btn-send {
+  width: 100%;
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  border-radius: 50px;
+  padding: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-send:active { background: #b8924a; transform: scale(0.97); }
+.btn-send:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-cancel {
+  width: 100%; margin-top: 10px;
+  background: transparent; border: none;
+  color: var(--stone); font-family: 'Poppins', sans-serif;
+  font-size: 14px; padding: 10px; cursor: pointer;
+}
+.send-success {
+  text-align: center; padding: 12px 0 4px;
+}
+.send-success .ok-icon {
+  font-size: 40px; margin-bottom: 12px;
+}
+.send-success h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px; margin-bottom: 6px;
+}
+.send-success p { font-size: 13px; color: var(--stone); line-height: 1.6; }
+.send-error { font-size: 13px; color: var(--red); text-align: center; margin-top: 10px; display: none; }
+
+.no-formule-wrap {
+  padding: 0 20px 12px;
+}
+.no-formule-btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 50px;
+  border: 1.5px dashed var(--gold);
+  background: var(--white);
+  color: var(--stone);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.no-formule-btn.active {
+  background: var(--ink);
+  color: var(--gold);
+  border-style: solid;
+}
+
+.fcard{
+display:flex;
+flex-direction:column;
+}
+.fcard-body{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+.fcard::after{
+margin-top:auto !important;
+}
+
+
+/* CORRECTIFS FINAUX — formules, boutons, responsive */
+a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="photos"]{ display:none !important; }
+.fcard{ display:flex !important; flex-direction:column !important; }
+.fcard-head{ min-height:220px !important; display:flex !important; flex-direction:column !important; }
+.fcard-body{ flex:1 !important; display:flex !important; flex-direction:column !important; }
+.fcard::after{ content:"Voir" !important; margin-top:auto !important; }
+.fcard.selected::after{ content:"Retirer" !important; }
+
+
+/* ==========================================================
+   PARCOURS SIMPLIFIÉ — composition avant formule, mobile first
+   ========================================================== */
+.step-head{
+  padding:18px 18px 12px;
+}
+.step-line{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:5px;
+}
+.step-number{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 26px;
+  background:var(--ink);
+  color:var(--gold);
+  font-size:12px;
+  font-weight:800;
+}
+.step-title{
+  font-size:17px;
+  line-height:1.2;
+  font-weight:750;
+  color:var(--ink);
+}
+.step-help{
+  margin-left:35px;
+  color:var(--stone);
+  font-size:12px;
+  line-height:1.45;
+}
+
+.composition-step{
+  overflow:visible;
+}
+.moment-choice{
+  padding:0 14px 16px;
+}
+.moment-choice-inner{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:9px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+}
+.moment-choice-title{ display:none; }
+.moment-choice-btn{
+  position:relative;
+  width:100%;
+  min-height:84px;
+  display:block;
+  text-align:left;
+  border:1.5px solid #ddd4c8;
+  background:var(--surface);
+  border-radius:14px;
+  padding:14px 44px 14px 14px;
+  color:var(--stone);
+  box-shadow:none;
+}
+.moment-choice-btn::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  right:14px;
+  width:20px;
+  height:20px;
+  border:2px solid #cfc5b9;
+  border-radius:50%;
+  transform:translateY(-50%);
+  background:#fff;
+}
+.moment-choice-btn.active{
+  background:#fffaf0;
+  color:var(--ink);
+  border-color:var(--gold);
+  box-shadow:0 5px 18px rgba(201,169,110,.16);
+}
+.moment-choice-btn.active::after{
+  border:6px solid var(--gold);
+}
+.moment-choice-btn strong{
+  display:block;
+  padding-right:4px;
+  font-size:14px;
+  line-height:1.25;
+  color:var(--ink);
+}
+.moment-choice-btn.active strong{ color:var(--ink); }
+.moment-choice-btn span{
+  display:block;
+  margin-top:4px;
+  font-size:11px;
+  line-height:1.4;
+  color:var(--stone);
+}
+.moment-choice-btn.active span{ color:#61584e; }
+.choice-chip{
+  display:inline-flex !important;
+  width:auto;
+  margin:0 0 6px !important;
+  padding:3px 8px;
+  border-radius:999px;
+  background:var(--smoke);
+  color:var(--stone) !important;
+  font-size:9px !important;
+  line-height:1 !important;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:800;
+}
+.moment-choice-btn.active .choice-chip{
+  background:var(--gold3);
+  color:#8b682a !important;
+}
+.choice-status{
+  grid-column:1 / -1;
+  padding:2px 3px 0;
+  font-size:11px;
+  line-height:1.45;
+  color:var(--stone);
+}
+.choice-status strong{ color:var(--ink); }
+
+/* Cartes de formules courtes et lisibles */
+.fcarousel{
+  display:grid !important;
+  grid-template-columns:1fr;
+  gap:9px !important;
+  overflow:visible !important;
+  padding:0 14px 16px !important;
+  scroll-snap-type:none !important;
+}
+.fcard{
+  width:100%;
+  min-width:0;
+  flex:none !important;
+  border-width:1.5px;
+  border-color:#ddd4c8;
+  border-radius:14px;
+  box-shadow:none;
+}
+.fcard-head{
+  min-height:0 !important;
+  padding:15px 15px 12px !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto;
+  grid-template-areas:
+    'name checkspace'
+    'badge badge'
+    'tagline tagline'
+    'price price';
+  gap:5px 10px;
+  background:var(--surface);
+}
+.fcard-check{
+  top:14px;
+  right:14px;
+  width:24px;
+  height:24px;
+}
+.fcard-name{
+  grid-area:name;
+  min-height:0 !important;
+  padding-right:28px;
+  font-size:16px;
+  line-height:1.2;
+}
+.fcard-badge{
+  grid-area:badge;
+  min-height:0;
+  margin-top:1px;
+  padding:3px 7px;
+  font-size:8px;
+}
+.fcard-badge.ghost{ display:none; }
+.fcard-tagline{
+  grid-area:tagline;
+  min-height:0 !important;
+  margin:1px 0 4px;
+  font-size:11px;
+  font-style:normal;
+  line-height:1.35;
+}
+.fcard-price-row{
+  grid-area:price;
+  margin-top:3px;
+}
+.fcard-price{ font-size:26px; }
+.fcard-pieces{
+  padding:4px 9px;
+  font-size:10px;
+}
+.fcard-body{
+  padding:10px 12px 8px !important;
+}
+.fcard-compo{
+  margin:0;
+  padding:9px 10px;
+  font-size:10.5px;
+  line-height:1.4;
+  font-style:normal;
+  background:#f6f2ec;
+}
+.fsub-label,
+.fpieces,
+.fcard-incl{
+  display:none !important;
+}
+.fcard::after{
+  margin:0 12px 12px !important;
+  padding:9px 11px;
+  font-size:10px;
+}
+.fcard.selected{
+  border-color:var(--gold);
+  background:#fff;
+  box-shadow:0 5px 20px rgba(201,169,110,.18);
+}
+
+/* Résumé de la sélection du chef */
+.chef-selection{
+  padding:0 14px 16px !important;
+}
+.chef-recap{
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  padding:14px;
+}
+.chef-recap-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:10px;
+}
+.chef-recap-title{
+  font-size:13px;
+  line-height:1.25;
+  font-weight:750;
+  color:var(--ink);
+}
+.chef-recap-sub{
+  margin-top:3px;
+  font-size:10.5px;
+  color:var(--stone);
+}
+.chef-recap-badge{
+  flex-shrink:0;
+  border-radius:999px;
+  background:var(--gold3);
+  color:#8b682a;
+  padding:4px 8px;
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.chef-recap-list{
+  list-style:none;
+  display:grid;
+  gap:6px;
+}
+.chef-recap-list li{
+  position:relative;
+  padding-left:17px;
+  font-size:11px;
+  line-height:1.35;
+  color:#4e4740;
+}
+.chef-recap-list li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--gold);
+  font-weight:800;
+}
+.chef-recap-dips{
+  margin-top:10px;
+  padding-top:9px;
+  border-top:1px solid var(--border);
+  font-size:10.5px;
+  color:var(--stone);
+}
+
+/* Constructeur personnalisé */
+.piece-builder{ padding:0 14px 16px; }
+.piece-guide{
+  padding:13px 14px;
+  margin-bottom:10px;
+}
+.piece-guide-title{ font-size:13px; }
+.piece-guide-text{ font-size:11px; }
+.piece-progress{ gap:5px; margin:8px 0 10px; }
+.piece-stat{ padding:8px 5px; }
+.piece-stat strong{ font-size:15px; }
+.piece-tabs{ margin:0 -2px; }
+.piece-tab{ padding:7px 11px; }
+.piece-alert.complete{
+  color:#45631f;
+  background:#eaf3d6;
+}
+
+/* Nettoyage mobile global */
+@media (max-width:640px){
+  body{ font-size:14px; }
+  .page{ max-width:100%; }
+  .hero{ padding:34px 20px 24px; }
+  .hero-brand{ font-size:43px; }
+  .hero-sub{ margin-bottom:18px; }
+  .section{ margin:8px 8px 0; border-radius:14px; }
+  .section-head{ padding:16px 16px 0; }
+  .fields{ padding:12px 14px 4px; }
+  .pers-stepper{ padding:12px 14px 15px; }
+  .sticky-bar-mobile{
+    padding:10px 12px calc(10px + var(--safe-bottom));
+  }
+  .sb-price{ font-size:27px; }
+  .btn-confirm{ padding:11px 14px; font-size:12px; }
+  .conds{ margin:8px 8px 0; grid-template-columns:1fr 1fr; padding:17px; gap:13px; }
+  .actions{ margin:8px 8px 0; }
+}
+
+@media (max-width:440px){
+  .field-row{ grid-template-columns:1fr; gap:4px; }
+  .step-help{ margin-left:0; }
+  .moment-choice-btn{ min-height:0; }
+  .piece-row{ padding:10px; }
+}
+
+@media (min-width:641px){
+  .moment-choice{ padding:0 24px 20px; }
+  .moment-choice-inner{ grid-template-columns:1fr 1fr; }
+  .fcarousel{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    padding:0 24px 22px !important;
+  }
+  .fcard{ height:100%; }
+  .chef-selection,
+  .piece-builder{ padding:0 24px 22px !important; }
+}
+
+
+
+/* Ajustements de finition */
+.fcard-head{
+  grid-template-rows:auto auto auto auto !important;
+}
+.fcard::after{
+  content:'Choisir cette formule' !important;
+}
+.fcard.selected::after{
+  content:'Retirer la formule' !important;
+}
+.sticky-bar-mobile.is-empty{
+  display:none !important;
+}
+.formula-step + .section{
+  scroll-margin-top:12px;
+}
+@media (max-width:640px){
+  .formula-step .step-head{ padding-bottom:10px; }
+  .fcard-head{ gap:4px 10px; }
+  .fcard-tagline{ margin:0 0 2px; }
+}
+
+
+
+.piece-filter-help{
+  margin:2px 0 6px;
+  font-size:10.5px;
+  color:var(--stone);
+}
+@media (max-width:640px){
+  .piece-tabs .piece-tab:first-child{ display:none; }
+  .piece-list{ gap:7px; }
+}
+
+
+
+.options-summary{ display:none !important; }
+.btn-confirm:disabled,
+.btn-act:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+  transform:none !important;
+}
+
+
+
+/* ==========================================================
+   CORRECTION MOBILE — état vide + composition dans la formule
+   ========================================================== */
+.inline-chef-recap{
+  display:none;
+  margin-top:10px;
+  padding:12px;
+  border:1px solid rgba(201,169,110,.38);
+  border-radius:12px;
+  background:#fffaf0;
+}
+.inline-chef-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.inline-chef-title{
+  font-size:12px;
+  line-height:1.2;
+  font-weight:800;
+  color:var(--ink);
+}
+.inline-chef-sub{
+  margin-top:3px;
+  font-size:9.5px;
+  line-height:1.35;
+  color:var(--stone);
+}
+.inline-chef-badge{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  min-height:22px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:var(--gold);
+  color:var(--ink);
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.inline-chef-list{
+  list-style:none;
+  display:grid;
+  gap:6px;
+}
+.inline-chef-list li{
+  position:relative;
+  padding-left:16px;
+  font-size:10.5px;
+  line-height:1.35;
+  color:#4e4740;
+}
+.inline-chef-list li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  top:0;
+  color:#9b752f;
+  font-weight:900;
+}
+.inline-chef-dips{
+  margin-top:9px;
+  padding-top:8px;
+  border-top:1px solid rgba(201,169,110,.22);
+  font-size:10px;
+  color:var(--stone);
+}
+
+/* Aucun faux état sélectionné au premier affichage. */
+.moment-choice-btn:not(.active){
+  background:#fff !important;
+  border-color:#ddd4c8 !important;
+  box-shadow:none !important;
+}
+.moment-choice-btn:not(.active)::after{
+  border:2px solid #cfc5b9 !important;
+}
+.choice-status{
+  padding:8px 10px 0;
+}
+
+/* Carte plus propre et plus lisible sur téléphone. */
+.fcarousel{ align-items:start !important; }
+.fcard{
+  height:auto !important;
+  background:#fff !important;
+  overflow:hidden;
+}
+.fcard .fcard-head,
+.fcard.selected .fcard-head{
+  background:#fff !important;
+}
+.fcard.selected .fcard-name,
+.fcard.selected .fcard-price,
+.fcard.selected .fcard-price sub{
+  color:var(--ink) !important;
+}
+.fcard.selected .fcard-tagline{
+  color:var(--stone) !important;
+}
+.fcard.selected .fcard-pieces{
+  background:var(--gold3) !important;
+  border-color:var(--gold) !important;
+  color:#8b682a !important;
+}
+.fcard-body{
+  padding-top:0 !important;
+}
+.fcard-compo{
+  background:#f7f4ef !important;
+}
+.fcard::after{
+  content:'Choisir' !important;
+  background:var(--ink) !important;
+  color:var(--gold) !important;
+}
+.fcard.selected::after{
+  content:'Formule sélectionnée ✓' !important;
+  background:var(--gold) !important;
+  color:var(--ink) !important;
+}
+
+@media (max-width:640px){
+  .step-head{ padding:15px 14px 10px; }
+  .step-title{ font-size:16px; }
+  .step-help{ font-size:11px; }
+  .moment-choice{ padding:0 10px 14px; }
+  .moment-choice-inner{ gap:7px; }
+  .moment-choice-btn{
+    min-height:0;
+    padding:12px 42px 12px 12px;
+    border-radius:12px;
+  }
+  .moment-choice-btn strong{ font-size:13px; }
+  .moment-choice-btn span{ font-size:10.5px; }
+  .fcarousel{
+    gap:8px !important;
+    padding:0 10px 14px !important;
+  }
+  .fcard-head{
+    padding:13px 13px 10px !important;
+    gap:4px 8px !important;
+  }
+  .fcard-name{ font-size:15px; }
+  .fcard-price{ font-size:24px; }
+  .fcard-body{ padding:0 10px 8px !important; }
+  .fcard-compo{ padding:8px 9px; }
+  .inline-chef-recap{ margin-top:8px; padding:10px; }
+  .inline-chef-top{ display:block; margin-bottom:8px; }
+  .inline-chef-badge{ margin-top:6px; }
+  .fcard::after{ margin:0 10px 10px !important; }
+  .piece-builder{ padding:0 10px 14px; }
+}
+
+
+
+/* FINITIONS V2 — carte complète visible et textes clarifiés */
+.piece-unavailable{
+  margin-top:5px;
+  font-size:9px;
+  line-height:1.25;
+  color:#8c8278;
+  font-style:normal;
+}
+.piece-row.disabled .piece-name{ color:#6f675f; }
+.piece-row.disabled .piece-desc{ color:#a09991; }
+.piece-tabs .piece-tab:first-child{ display:inline-flex !important; }
+.piece-tab{ align-items:center; justify-content:center; }
+.piece-guide-text strong{ color:var(--gold2); }
+@media (max-width:640px){
+  .piece-filter-help{ margin-top:4px; }
+  .piece-tabs{ padding-bottom:10px; }
+}
+</style>
+</head>
+<body>
+
+<form autocomplete="on" onsubmit="return false;">
+<div class="page">
+
+  <div class="hero">
+    <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAJmAmcDASIAAhEBAxEB/8QAHQABAAEFAQEBAAAAAAAAAAAAAAkBAgMHCAYFBP/EAFUQAQABAgQBBggIDAMEBwkAAAABAgMEBQYRBwgSEyExNwkYQVFhdpS0FBY4cXWBs9IVIjJCUlV0kZWhstQjVoIXk6KxJCUmU3JzozNEV2Jjg5LR4f/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDjIAAAAAAAAAAAAAAAAAAAAAAAAAAViJnsVimQWi+KYXRER5AY9p8yvNleAt5npObC4BTmx5jaPMqAbR5gAAAU2jzQbR5lQFObHmU5kLgFnM9JzZXgMcxPmUZVJiJ8gMYvmmFJpkFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKxEz2AoL4p866IiOwFkUz8y6KYhUAAAAAAAAAAAAAAAAAAAAAAAAAWzTHzLgFk0zHpWsqkxE9oMYumnzLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACOtdFPnXxG3YC2KfOuAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmIntAFk0+ZayqTET2gxi6aZhaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC6mnftBSImexfFMQrHUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALaqd+xcAxzGyjJMRPasqp2BQAAAAAAAAAAAAAAAAAAAAAAAAAAAAI62Smnb5wUpp8srgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABZVT5YWsq2qnfrgFgAAAAAAAAAAAAAAAAAAAAAAACsRvJEbyvpjaAKY2VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFKqd/nY2VSqN/nBjAAAAAAAAAAAAAAAAAAAAI6xkpjb5wKY2hUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAUqp3+djZVtUeWAWAAAAAAAAAAAAAAAAAuojfrBWiPLK4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWVx5YWsrHVG0goAAAAAAAAAAAAACsRvOzJHUpTG0KgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKTG8KgMUi+uPKsAAAAAAAAAAAXURvO62OuWWI2jYAAAAAAAff4bZLhdS8RdNadx1y9bwma5vhcFfrszEXKaLt6miqaZmJiKtqp23iY38ku3fEs4W/r/WXtmG/twcBjvzxLOFv6/1l7Zhv7c8Szhb+v8AWXtmG/twcBjvzxLOFv6/1l7Zhv7c8Szhb+v9Ze2Yb+3BwGO/PEs4W/r/AFl7Zhv7c8Szhb+v9Ze2Yb+3BwGPY8atE3eHfFDPdI11XLlnA4j/AKLcuTE1XLFcRXaqmY2jeaKqd9tuvfseOAAAAABdZt3L12i1aoqruV1RTTTTG8zM9URALR3dp7kXaCryDL689zzVNGa1YW3ONpw2Lw8Wqb3NjnxRvZmebFW+28z1eV+7xLOFv6/1l7Zhv7cHAY788Szhb+v9Ze2Yb+3PEs4W/r/WXtmG/twcBjvzxLOFv6/1l7Zhv7c8Szhb+v8AWXtmG/twcBjvzxLOFv6/1l7Zhv7dzDysOGGQcJ+IuA07p3GZnisJicot42uvH3KK7kV1Xr1ExE0UURzdrdPk33mesGoQXW6K7lym3bpqrrqmIpppjeZmeyIgFo3pw05LPFLWFm3jcbgbGmcBcp51N3NKpou1xv5LNMTXE+X8eKY9LemmuRPo7DUb6i1hneZXNuzB2reFp3+aqLk7fXAOFxIzhuSRwZtWuZcyzNr9W/5dzMa4n/h2j+RiOSTwZu2pooyvNbFU/n28xuTMf/lvH8gRzDuvUfIn0Xibf/Z/V2e5bc2/97t2sVR+6mLc/wA2jOJHJU4paSs3cbl+Dw+p8DbjnTXllU1XqY38tmqIqmfRRzgaHF963cs3a7N63XbuUVTTXRXG00zHbExPZKwAe04G6Ty7XPFfINJ5texVjA5jiKrV65haqabtMRRVV+LNVNURO9MdsS7I8Szhb+v9Ze2Yb+3BwGO/PEs4W/r/AFl7Zhv7c8Szhb+v9Ze2Yb+3BwGO/PEs4W/r/WXtmG/tzxLOFv6/1l7Zhv7cHAY788Szhb+v9Ze2Yb+3PEs4W/r/AFl7Zhv7cHAY788Szhb+v9Ze2Yb+3cBgAAAAAAAAAAAAAAMdUbSyKVRvAMYAAAAAAAAKxG87AuojyriOoAAAAAAB7LgV33aE9ZMu95tpYUT3Arvu0J6yZd7zbSwgAAAAAA458I3ojnWcg4hYSz10TOV46qNuyd67NX7+liZ9NMOMksnGbR1rX3C/P9J3Ip6THYSqMNVVO0UX6fx7VUz5orpp39G6J/EWbuHxFzD37dVu7armiuiqNppqidpifTuDGAAAA3XyLdETrLjnll+/a5+AyKPwpiJmOqarcxFqn5+kmidvLFNTSiQbkBaI+LvCK9qfE2ubjdSYjpqd+2MNa51FqJj01Tcq9MVUg6NAAAAAAcB+EZ77sm9W7HvOJd+OA/CM992Terdj3nEg5odSeDnw2n8VxF1BTmGW2MTnFjL6MRl1+5TFU4eiLnNuzTE9lUzXajnR1xG8eWXLbb3I81H8W+ULpq7XXNNjMbtWW3Yidud01M00R/vOjn6gSagAAAAA4a8I7h9PYbWWmJwOXYexnWIwl+9mGIt0RTVft86im1z9vypiabsbz17dXX1bcot0ctXUk6i5Que00XarmHyqm1ltnf8AN6One5H+9ruNLg2pySflGaN/bK/sq0n6MDkk/KM0b+2V/ZVpPwAAAAAAENiZNDYAAAAAAAAAAAAAAAACyuNp3WslUbwxgAAAAAAL6I8qxliNo2AAAAAAAAB7LgV33aE9ZMu95tpYUT3Arvu0J6yZd7zbSwgAAAAAAI3OWxon4n8csxxeHtc3AZ/TGZ2JiOqK65mL1Pz9JFVXzVwkjc8cvbRHxl4OxqHDWprx2m7/AMJjaN5nD3NqL0R83+HXPotyCPMAAAH29Bacxmr9a5PpjAdWIzPGW8NTVMdVEVVRE1z6KY3mfRCWvIcrwWSZJgcmy210OCwGHt4bD299+bbopimmP3RDiPwdmiPwlrfN9d4q1vh8nsfBcJVMT14i9E86Yns/FtxMTH/1Yd0gAAAAAAOA/CM992Terdj3nEu/HAfhGe+7JvVux7ziQc0P15PmGJynN8HmmDrm3icHiKMRZqj82uiqKqZ/fEPyAJhdPZph88yDLs6we/wbMMLaxVnft5lyiKqf5TD9zTXIv1J8Y+T1kHSXKrmIyvpMtvTPk6Kr/DiPmtVW25QAAH5s0x2GyzLMVmWMudHhsJZrv3q/0aKKZqqn90S/S1Jyv9Rzpvk96nv270W8RjrNOXWY8tXTVRRXEf8A25uT9QI1tSZric91FmWeY2qasVmGLu4q9Mz213K5qq/nMvwADanJJ+UZo39sr+yrSfowOST8ozRv7ZX9lWk/AAAAAAAQ2Jk0NgAAAAAAAAAAAAAAAACyuNp3XqVRvAMYAAAAALqI616lEbQqAAAAAAAAD2XArvu0J6yZd7zbSwonuBXfdoT1ky73m2lhAAAAAAAfkznLsJnGT43KcwtReweNw9zDYi3P59uumaao+uJl+sBEVxE0zjNGa5zrS2O3m/lmMuYeattukpifxa49FVO1UeiYfBdX+EV0R8A1fk2vMJZ2s5rZ+BY2qmOqL9qN6Kpnz1W52j0WnKAANm8mDQ/x/wCNWQ5Nfs9Ll+Hu/DswiaZmnoLUxVNNW3kqq5tH+sHfHJd0R8QeCmRZRfs9FmGJtfD8fExMVdNd2qmmr0008yj/AENnAAAAAAAA4D8Iz33ZN6t2PecS78cB+EZ77sm9W7HvOJBzQADrDkG8U9M6NyXVWR6v1BhMowc3bOOwc4m5zaa65pqouxTHbNW1NrqiJ32b+zHlQcEMFTX/ANs/hNyn8yxl2Jqmrr26p6Pm+ntaN5FHCHhhxA4eZjnWqsjqzXNsLmleGmm5jLtFFFvo7dVMxTbqpjr51Xbv1xLpXLuCHCLATRNjh1p2vmb7dPg6b/b5+k33+sHi/Gy4LfrvMf4bd/8A0vscq/gpcvU0V6gx1mmZ2muvLL800+mdqZn90Ng/7KOFv/w10b/A8N9x+bG8G+E+L5nS8ONK08zfbocrtWu3z8ymN+zyg89hOUrwQxUxFrXmGp3/AO9wWJt/1W4aE5enFDTGq9J6XyLSWo8uzjD14y9jMZGEvRX0c26Iot87brjfpLm0T+i6AxvJx4J4yNrugsFT2/8AscTftdv/AIK4/wD45g5a/CTh7wzyrT2J0jgMVgMXmWKv012asVXetzboppmdufMzExNdPl8vWDmIAG1OST8ozRv7ZX9lWk/Rgckn5Rmjf2yv7KtJ+AAAAAAAhsTJobAAAAAAAAAAAAAAAAAAAY6o2lRfXHVusAAAVjrnZRdRHWC8AAAAAAAAAHsuBXfdoT1ky73m2lhRPcCu+7QnrJl3vNtLCAAAAAAAADW3KZ0P/tA4L59kdmz0uYWrPwzL4iN6untfjU0x6ao51H+tFqmTRfcqjRE6C4257ldmz0WX4y5+EMBEU7U9DemaubT6Ka+fR/oBq13R4OzQ/wCDdF5vrzGWJpv5ve+CYKqqNv8Ao9qfx6qZ8sVXN4n/AMpxHkeWYzOs6wOT5dZm9jMdiLeGw9uO2u5XVFNMfvmEtfD/AE1gtHaJyfS+XxHwfLMJbw8VRTt0lVMfjVzHnqq3qn0zIPuAAAAAAAAOA/CM992Terdj3nEu/HAfhGe+7JvVux7ziQc0AA698GxncW871hpyud5v4bD423G/Z0dVVFf7+lo/c7WRick/iBlfDfjFgs8z3EXsNlGIw13BYy7bomvmUV7TTVNMdc0xXTRM7RM7R1RMuxs15WPBbBVTTh88zDMdpjrw2W3Yj/1IpBvUc41csrhNFUxGA1TVET2xgbW0/wDqq2+WTwmqrppqwOqaImdpqqwNraP3XdwdGuDfCM558M4pZFkNF3n28tyrpaqfJRcvXKt4+fm27c/XDoDKOVdwVx0xF/UGNy6Z7IxWW3p699u23TVHpcQ8o7W2B4hcZM+1Tlc3Zy7EV27WE6Snm1Tbt2qbcTt2xvNM1bT+kDXgANqckn5Rmjf2yv7KtJ+jA5JPyjNG/tlf2VaT8AAAAAABDYmTQ2AAAAAAAAAAAAAAAAAAApMbxsxsrHV1VAoAAvo7FjJHVAKgAAAAAAAAA9lwK77tCesmXe820sKJ7gV33aE9ZMu95tpYQAAAAAAAAHLPhEND/hTQeV65wlnfE5Lf+D4uqmO3DXpiImZ/+W5zYj/zJdTPja605gtXaOzfTGYxHwXM8Jcw1dU087mc6naK4jz0ztVHpiAcIcgXQ/xk4v3NS4qzz8DpvD9PEzTvTOJub0Won5o6SuJ8k0QkIah5JnDLGcL+FsZbnNi1azzHYu5isfFFVNfNnfmW6YqiZiYiimJ9E11NvAAAAAAAAAOA/CM992Terdj3nEu/HAfhGe+7JvVux7ziQc0AAAAAAAAAA2pySflGaN/bK/sq0n6MDkk/KM0b+2V/ZVpPwAAAAAAENiZNDYAAAAAAAAAAAAAAAAAAAtr8krlK/wAkGMAFY7YZFlH5S8AAAAAAAAAAHsuBXfdoT1ky73m2lhRPcCu+7QnrJl3vNtLCAAAAAAAAAAAAAAAAAAAAA4D8Iz33ZN6t2PecS78cB+EZ77sm9W7HvOJBzQAAkd5M3AzRmleHGU5lm2RYHNs/zTCW8Xi8TjsPTdmz0lMVRZtxVExTFMTtMx11TvM9W0RH5oPJKtSa4yLT1HbmeY4fCb+bpLlNO/8ANLxRTTRTFFFMU00xtERG0RAPg/EnRn+Ucg/htn7p8SdGf5RyD+G2fuvvgPC604Q8N9W5FfyjNdI5Tbt3KZii/hcLRYv2ap7KqLlMRMTHVPliduuJjqRha/07f0jrjO9L4i7F65leOu4SbsRtFyKKpiK4jybxET9aXdHHy7ciqyflC5li+jii1m+Dw2Ot7dk/idFVPzzVaqn6waIABtTkk/KM0b+2V/ZVpP0YHJJ+UZo39sr+yrSfgAAAAAAIbEyaGwAAAAAAAAAAAAAAAAAAAkAYhWrtkBdb8q5bR2LgAAAAAAAAAAey4Fd92hPWTLvebaWFE9wK77tCesmXe820sIAAAAAAAAAAAAAAAAAAAADgPwjPfdk3q3Y95xLvxwH4Rnvuyb1bse84kHNAAN2ciPIfw5yiMjuV2elsZZav4+7H6PNtzTRV9Vyu2kncVeDYyGm5nGr9T1xMVWMPYwFqdu2LlVVyvr9HR2/3u1QAAHGXhJ8ipi/o7U1u3POqpxGBv1+TaJprtx/O67NaE5eeRzm/J8xuNpiJqyfH4bG7bdcxNU2Z/le3+oEc4ANqckn5Rmjf2yv7KtJ+jA5JPyjNG/tlf2VaT8AAAAAABDYmTQ2AAAAAAAAAAAAAAAAAAAAAsr/KC55AF1H5KqlP5MKgAAAAAAAAAA9lwK77tCesmXe820sKJ7gV33aE9ZMu95tpYQAAAAAAAAAAAAAAAAAAAAHAfhGe+7JvVux7ziXfjgPwjPfdk3q3Y95xIOaAASJcgXIZyngFZzGuimK85zHEYuKtvxpopmLMRPo3tVTHz+l0C8hwVyD4r8JNK5DNubd3CZVYpvUz/wB7NEVXP+OanrwAAHlOMORfGbhVqnIabPTXcblWIt2aNu270czbn54rimfqerAQ2D0vFTI40zxM1Np+iJ6PL81xGHtbxtvRTcqiifrp2l5oG1OST8ozRv7ZX9lWk/Rgckn5Rmjf2yv7KtJ+AAAAAAAhsTJobAAAAAAAAAAAAAAAAAAAAAW19gV/kgKx2QqR2AAAAAAAAAAAPZcCu+7QnrJl3vNtLCie4Fd92hPWTLvebaWEAAAAAAAAAAAAAAAAAAAABwH4Rnvuyb1bse84l344D8Iz33ZN6t2PecSDmh6PhfkXxn4kab09NO9GY5ph8Pc9FFVymKp+qnefqecb35CWRVZxyhcuxnRxXayjB4jG3N46o/E6Kn6+ddpn6gSOAAAAAAjj5duRVZPyhcyxfRxRazfB4bHW9uyfxOiqn55qtVT9bRDsbwk+RUxf0dqa3bnnVU4jA36/JtE0124/ndccg2pySflGaN/bK/sq0n6MDkk/KM0b+2V/ZVpPwAAAAAAENiZNDYAAAAAAAAAAAAAAAAAAAAClf5IVdgCsBHYAAAAAAAAAAA9lwK77tCesmXe820sKJ7gV33aE9ZMu95tpYQAAAAAAHwdBaowOr9PRm+BjmU04nEYW7amuKpt3bN2q1VE7emjeOzqmJ8r7zlLkYa15nFHiPw/xd7quZtis0wNNVXVvF6bd6mPTMdFO0fo1SDq0AAAFmIvWsNh7mIv3KLVm1RNdyuudqaaYjeZmfJEQ+NoDUdjV+jMq1PhbFVixmWHpxFq3VVvMU1dm87R17NXctXWvxP4F5nhsPe6PH57VGWYfaY35lcTN6dvN0cVU7+Sa4eq5NPcFoj6Hsf0g2GAAAAAA4D8Iz33ZN6t2PecS78cB+EZ77sm9W7HvOJBzQ7J8GxkVM1ax1LconnRGHwNivybTz67kfytONkjvITyOcn5POW4qqObXm+NxOOqjyx+P0VO/z02aZ+aYBvYAAAAAGhOXnkc5vyfMbjaYiasnx+Gxu23XMTVNmf5Xt/qRzpaOMORfGbhVqnIabPTXcblWIt2aNu270czbn54rimfqRLg2pySflGaN/bK/sq0n6MDkk/KM0b+2V/ZVpPwAAAAAAENiZNDYAAAAAAAAAAAAAAAAAAAAClXYFX5IBHZCqlP5MKgAAAAAAAAAA9lwK77tCesmXe820sKJ7gV33aE9ZMu95tpYQAAAAAAEX+n9Y16B5Tt/VcVVRZwWo8TGKimN5qw9d6ui7ER5Z5lVW3p2SgIjeJveRqf6Yxf21YJcLN23es0XrNyi5buUxVRXRO9NUT1xMTHbC5prka61nWfArKPhF2a8fk0zleJ37Z6KI6Ofrt1W+vyzEtygA+Xq/PcFpjSua6izGrm4TLcJcxV3riJmKKZq5sb+Wdto9MwDhLwgWtZz7izh9K4a9zsHp3DRRXETvE4m7EV1z1eanoqfRMVOvuTT3BaI+h7H9KMDU+c43UWo8yz/ADK50mNzHFXMVfq8k111TVO3mjeexJ/yae4LRH0PY/pBsMAAAAABHl4QPNrGZcfYwdmmYryrJ8NhL07771TVcv8A1fi3qUhqKDjnqGNVcYdWZ9Rcm5ZxOaXugqntmzRVzLf/AAU0g8Wlv4XZF8WOG2m9PTbi3Xl+V4fD3YiNv8Sm3TFc/PNW8/Wi+4L5DTqfi1pXIbluq5Zxma4ei/TEbz0UVxNz/gipLKAAAAAAAiR4qZHGmeJmptP0RPR5fmuIw9reNt6KblUUT9dO0pbkcfLtyKrJ+ULmWL6OKLWb4PDY63t2T+J0VU/PNVqqfrBrngln1GmeL2k89u3KrdjC5rYqv1R2xamuKbn/AATUliQ2RMxMTE7THZKW/hZn3xp4a6b1FNyK68wyzD37s+a5Vbjnx88Vc6PqB6QAAAAABDYmTQ2AAAAAAAAAAAAAAAAAAAAApX+SKV9gCtH5Kq2jsXAAAAAAAAAAA9lwK77tCesmXe820sKJ7gV33aE9ZMu95tpYQAAAAAAERvE3vI1P9MYv7atLkiN4m95Gp/pjF/bVg3v4PfWv4E4pY3SOJu83Cahw29qJ22+E2Yqrp+beibsemeb6HfaIDSWeY3TOqMr1FltUU4zLcXbxVnfsmqiqKoifRO20x5pS36ZzjBah05lufZdXNeDzHC28VYqntmi5TFUb+naQfQczeEI1r+BOF2B0hhb3NxWoMVveiJ6/g1mYqq9Mb1zaj0xFUOmUaPLJ1p8cuOucdBd6TA5NtleG6+r/AApnpJj57k19fljYGmkqHJp7gtEfQ9j+lFelQ5NPcFoj6Hsf0g2GAAAAADzfFLUEaU4baj1H0lNuvLssv37Uz5blNE8yPnmrmx9aJCZmZmZneZ7ZSL8vPUH4G5P+LwFFURcznHYfBR19cUxVN6qfm2tbT/4kdAOguQJkM5tx9s5lO0UZNl2Ixc7x21VRFiI+f/Fmf9MpEXIPg2ch5mT6v1RcsxPTYixgLNzzcymq5ciPn6S1P1Q6+AAAAAAAcZeEnyKmL+jtTW7c86qnEYG/X5Nommu3H87rs1oTl55HOb8nzG42mImrJ8fhsbtt1zE1TZn+V7f6gRzpGuQfn05zyfMDg653ryfHYjAzO/XMc6L1P7ovRH1I5XYfg2M+5uP1fpi5VM9JasY+zG/VHNmq3cn6+fb/AHA7QAAAAAAQ2Jk0NgAAAAAAAAAAAAAAAAAAAALa+yBS52wAUdsr1lH5S8AAAAAAAAAAHsuBXfdoT1ky73m2lhRPcCu+7QnrJl3vNtLCAAAAAAAiN4m95Gp/pjF/bVpckRvE3vI1P9MYv7asHnkgPg/Na/h7hNidK4m5zsXp3EzRRE9s4e9NVdE+navpY9ERSj+bs5FetZ0fx1yvD37s04DPaZyvER5OdcmJsz29vSRRG/kiqoHevG3WVvQHCvUGqprppv4PCVRhYmInnYiv8S1G09sc+qnf0booLlddy5VcuVTXXXM1VVTO8zM9sy7L8I5rXm2NPcP8Ld665nNMbTHmjnW7Mb/P0szHoplxkAlQ5NPcFoj6Hsf0or0qHJp7gtEfQ9j+kGwwAAAAAcVeEm1BFzONI6WtzMTYw9/ML0b9VXSVRbt9Xo6O5+9yC3Ny0tQxqDlD6gi3cmuxlsWsvtb+To6I58f7yq403boquV00UUzVVVMRTERvMz5gSS8iLIvwJyd8ku10zTezO7fx9yJjb8q5NFE/XRRRP1t2Pi6CyWNN6HyLT0bf9WZdh8JMx5Zt26aZn65h9oAAAAAAB5TjDkXxm4VapyGmz013G5ViLdmjbtu9HM25+eK4pn6nqwENjd3Ihz/8B8ofJbVd7orGa2b+AuzvtFXOomuimfPvct24+fZrbipkcaZ4mam0/RE9Hl+a4jD2t423opuVRRP107S/JoTO69Na3yLUVvrqyzMbGL28/R3Katvr2BLyKW66Llum5bqproqiJpqpneJieyYlUAAAABDYmTRG/EXW3+TtQ/wy990Hnh6H4i62/wAnah/hl77p8Rdbf5O1D/DL33QeeHofiLrb/J2of4Ze+6fEXW3+TtQ/wy990Hnh6H4i62/ydqH+GXvunxF1t/k7UP8ADL33QeeHofiLrb/J2of4Ze+6fEXW3+TtQ/wy990HnhlxeGxGDxV3C4uxdw+ItVTRctXaJproqjtiYnriY8zEAAAAAAAAAACyv8oUntkAjqlkYmSnriAVAAAAAAAAAB7LgV33aE9ZMu95tpYUT3Arvu0J6yZd7zbSwgAAAAAAIjeJveRqf6Yxf21aXJEbxN7yNT/TGL+2rB55fh713D37d+xcqt3bdUV0V0ztNNUTvExPn3WAPua51bqHW+pMRqPVGY1ZhmeIpopuXpt0W4mKaYppiKaIimIiIjsiPO+GACVDk09wWiPoex/SivSocmnuC0R9D2P6QbDAAAAYsZibGDwl7F4m7TasWLdVy7XV2U00xvMz80QytbcqDP501wC1hmVMxFyvL6sHb6+vnX5izEx6Y6Tf6gRk6tzi/qHVWbZ/id+nzLG3sXc3/SuVzXP/ADem5P2RfGXjZo/J5s9Nau5rZuXre35Vq3V0lyJ9HMoqeFdGeD4yKnM+ON7NrkTzMnyq9fonbf8AxLk02oj0fi13P3AkHAAAAAAAAABHHy7ciqyflC5li+jii1m+Dw2Ot7dk/idFVPzzVaqn62iHY3hJ8ipi/o7U1u3POqpxGBv1+TaJprtx/O645BKpydM+jUvA3R+b7711ZXasXJ333uWf8Kufrqty9+5r8Hjn8Zjwbx+R3Lm97KM1uRTR+jau0010/vr6X9zpQAAAAAAAAAAAAAAEU/KF79dc/T2M+2qeEe75Qvfrrn6exn21TwgAAAAAAAABPYKV/kgxgAL6OzZYuonrBeAAAAAAAAAD2XArvu0J6yZd7zbSwonuBXfdoT1ky73m2lhAAAAAAARG8Te8jU/0xi/tq0uSI3ib3kan+mMX9tWDzwAAACVDk09wWiPoex/SivSocmnuC0R9D2P6QbDAAAAcveEZz74FwvyLT1HOivNM06aqYnqm3ZtzvTP+q5bn/S6hc1+EC0TmGo+F+X6kyyzcv3NO4mu7ibdEbzGHu0xFdzby82qi3v6JqnsiQcAOqPB0aoyfKtc6h05j67VnHZ1hrNeBuVzEc+qzNyarVM+eYuc7by9HLldlweJxGDxdnF4S/dw+Is1xctXbVc0126oneKqZjriYnr3gExw5x5JfKHw/EDCWdIavxFrD6rs0bWb07U0ZlTEdseSLsR1zT5e2PLEdHAAAAAAAA1hyh+MWR8JNKVYvEVW8XnuLoqjLMu367tX6de3XFume2fL2R19gal8I5qDKbXDzIdL13aK82xOaU463aiYmq3Zt27lFVc+WN6rkRHn2q/RcKvsaz1NnmsNS4zUWosfdx2ZYyvn3btf8qaY7KaYjqimOqIjZ8cHVXg4M+rwvEHUum6rlNNrMMsoxURPlrsXIpiI/03qp+r0O6XCvg6dJZhi9fZzrOu1coy3AYGrBUXNtouX7lVFXNifLzaKZmduznUed3UAAAAAAAAAAAAAACKflC9+uufp7GfbVPCPd8oXv11z9PYz7ap4QAAAAAAAABZX27L2Oqd5BQAAAGWOwW0T1LgAAAAAAAAey4Fd92hPWTLvebaWFE9wK77tCesmXe820sIAAAAAACI3ib3kan+mMX9tWlyRG8Te8jU/0xi/tqweeAAAASocmnuC0R9D2P6UV6VDk09wWiPoex/SDYYAAAClyii5bqt3Kaa6KomKqao3iYntiYVAcO8rHk0V5F8K1xw6wVy7lX417McqtxvODjrmblqI7bXnp7ae2Pxeqnk5Mmjk5cuj9PaN40WrGm8vt5fh8yyq3mF+xa6rdN6u9eoqminspiYt0zzY6onfbbsBovDX72GxFvE4a9cs3rVUV27luqaaqKoneJiY64mJ8rvXkj8oq1raxh9Fa1xVFrU1unmYTF1zFNOY0xHZPmuxHk/O7Y694cDL7F67h79u/Yu12r1uqK7dyiqaaqaoneJiY7JifKCZAcy8kflFWtbWMPorWuKotamt08zCYuuYppzGmI7J812I8n53bHXvDpoAAAGuePfFzT/CXSk5nmdVOKzPERVTl2XUV7XMRXHln9GiOrnVeTsjeZiJD8/KE4x5Dwk0vOLxc0YzO8VTMZdl0VbVXav06/wBG3E9s+XsjrRr681bn2t9UYzUmpMdXjMwxVW9VU9VNFPkooj82mI6oiDXmrc+1vqjGak1Jjq8ZmGKq3qqnqpop8lFEfm0xHVEQ+EA21yc+COfcWtQU1RTewGmsLc2x+Zc3q6tpm1a36qrkxMeimJ3nyRPluCmk8Jrrirp/SePxN7DYTMcV0d65ZiOfFEUzVMU79UTMU7b9e2++09iU/S2QZPpfT+DyDIMBZwGW4K3FuxYtR1Ux558szM7zMz1zMzM7zIMejdNZJpDTeD07p3AWsDluDo5lq1RH76qp7aqpnrmZ65mX1wAAAAAAAAAAAAAABFPyhe/XXP09jPtqnhGweUlZpsce9b0UTMxOc4ivr89Vc1T/ADlr4AAAAAAAAFKp2hjXVz5FoAAAAK0ztLIxMlM7wCoAAAAAAAPZcCu+7QnrJl3vNtLCie4Fd92hPWTLvebaWEAAAAAABEbxN7yNT/TGL+2rS5IjeJveRqf6Yxf21YPPAAAAJUOTT3BaI+h7H9KK9Khyae4LRH0PY/pBsMAAAAABwH4Rnvuyb1bse84l344D8Iz33ZN6t2PecSDmgAF9i9dw9+3fsXa7V63VFdu5RVNNVNUTvExMdkxPld7ckflFWtbWMPorWuKotamt08zCYuuYppzGmI7J812I8n53bHXvDgZfYvXcPft37F2u1et1RXbuUVTTVTVE7xMTHZMT5QTIDlbkycqLKM5ymzpribmtjLc5w9MUWM1xExRYxlPZHSVdlFyPLM7Uz27xPVOzuKvKE4baG09dx1nUOW5/mNVE/BcvyzF0X67tfk59VEzFunftqq8m+0TPUD6vHvi5p/hLpSczzOqnFZniIqpy7LqK9rmIrjyz+jRHVzqvJ2RvMxExqcRdZ6g19qvF6l1LjasVjsRO0RHVbs0R+Tbt0/m0R5I+eZ3mZma8SNa5/wAQNX43U+o8XN/GYmr8WiJno7FveebatxP5NFO/VHzzO8zMz5wAAG1OST8ozRv7ZX9lWk/Rgckn5Rmjf2yv7KtJ+AAAAAAAAAAAAAAAACLHlNd/+tvpa9/za6bF5TXf/rb6Wvf82ugAAAAAAAUrnaAWTO87qAAAAAAuonr2WgMopE7xuqAAAAAAD2XArvu0J6yZd7zbSwofdMZxjNO6lyvUGX9H8MyzGWsZh+kp51PSW64rp3jyxvTHU3r44XF7zae9gq++CQ0R5eOFxe82nvYKvvnjhcXvNp72Cr74JDRHl44XF7zae9gq++eOFxe82nvYKvvgkNEeXjhcXvNp72Cr7544XF7zae9gq++CQ1EbxN7yNT/TGL+2rbl8cLi95tPewVffaEzrMMRm2cY3NcXzPhGNxFzEXeZG1PPrqmqdo8kbzIPyAAAAJUOTT3BaI+h7H9KK9vDRvKi4naU0rlum8qjI/gOW4enD2OlwU1V8ymNo3nnxvIJIxHl44XF7zae9gq++eOFxe82nvYKvvgkNEeXjhcXvNp72Cr7544XF7zae9gq++CQ0R5eOFxe82nvYKvvnjhcXvNp72Cr74JDXAfhGe+7JvVux7ziXzvHC4vebT3sFX32q+L3EnUfFHUuH1Bqf4H8Mw+DpwdHwWzNuno6a6643iZnr3uVdfzA8aAAAAAAAAADanJJ+UZo39sr+yrSfoiNB6ozPRWr8u1Rk3QfhDL7k3LHTUc+jeaZp643jfqmW6vHC4vebT3sFX3wSGiPLxwuL3m097BV988cLi95tPewVffBIaI8vHC4vebT3sFX3zxwuL3m097BV98Ehojy8cLi95tPewVffPHC4vebT3sFX3wSGiPLxwuL3m097BV988cLi95tPewVffBIaI8vHC4vebT3sFX3zxwuL3m097BV98Ehojy8cLi95tPewVffPHC4vebT3sFX3wSGiPLxwuL3m097BV988cLi95tPewVffBIaI8vHC4vebT3sFX3zxwuL3m097BV98GvuU13/62+lr3/Nrp9fWeosw1bqrMtS5r0Pw7Mb9WIv9DRzaOdPbtG87Q+QAAAAAAAx1TvK+qdoYwAAAAAAAAXUT17L2JkpneAVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABSqdoBZVO8qAAAAAAAAAArTO0qAMotoneNlwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADHM7zurXPkWgAAAAAAAAAAAAR1SyRO8bsatM7SDIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAApVO0KzO0MczvO4KAAAAAAAAAAAAAAAAuonySvYl9E+SQXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsrq8kAVTvPoWgAAAAAAAAAAAAAAAAAAC+md/nXMTJTVv84KgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtqq26oAqq8kLAAAAAAAAAAAAAAAAAAAAAAABfTVv865iX01eSQXAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAsqq8kArVV5IWAAAAAAAAAAAAAAAAAAAAAAAAAAAC6mrbqlexKxMwDIKRMSqAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATOykzELJmZ7QVqq3+ZaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC+KvOsAZRjiZhfFUSCoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKTVEAqsqq8ykzM9qgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALoqmO3rXRMSxgMosiqY9K6KokFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAWzVEekFyk1RCyaplQFZqmVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWJmF0V+eFgDJExPlVYlYmY8oMgsivzwuiqAVAAAAAAAAAAAAAAAADePOtmqAXCya58ikzM+UF8zEeVbNfmhaArMzPbKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAK7z5wBXnSc/0ACvPjzKxVEgBuqAAAKbqTVAAc/wBCnPnzABzpU3nzgCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/2Q==" alt="MiL Traiteur" style="height:90px; width:auto; margin-bottom:16px; display:block;">
+    <div class="hero-sub">Traiteur &amp; Événements · Paris</div>
+    <div class="hero-meta">
+      <div class="hero-pill">N° <span id="devis-num">2026-695</span></div>
+      <div class="hero-pill">Émis le <span id="date-emission">06/08/2026</span></div>
+      <div class="hero-pill">Valable jusqu'au <span id="date-validite">05/09/2026</span></div>
+    </div>
+  </div>
+
+  <div class="section col-main composition-step" id="composition-step">
+    <div class="step-head">
+      <div class="step-line"><span class="step-number">1</span><div class="step-title">Comment souhaitez-vous composer ?</div></div>
+      <div class="step-help">Validez une sélection MiL prête à servir, ou choisissez vous-même chaque pièce.</div>
+    </div>
+    <div class="moment-choice" id="moment-choice"></div>
+  </div>
+
+  <div class="section col-main formula-step" id="formula-step">
+    <div class="step-head">
+      <div class="step-line"><span class="step-number">2</span><div class="step-title">Choisissez votre formule</div></div>
+      <div class="step-help" id="formule-intro">Comparez les formats selon le nombre de pièces, la composition et le prix par personne.</div>
+    </div>
+
+    <div class="fcarousel" id="fcarousel">
+
+      <div class="fcard" onclick="selectFormule(0,this)">
+        <div class="fcard-check">✓</div>
+        <div class="fcard-head">
+          <div class="fcard-name">Cocktail Découverte</div>
+          <div class="fcard-badge ghost" aria-hidden="true">&nbsp;</div>
+          <div class="fcard-tagline">Une formule simple, fraîche et généreuse</div>
+          <div class="fcard-price-row">
+            <div class="fcard-price">22 €<sub> / pers.</sub></div>
+            <div class="fcard-pieces">12 pièces</div>
+          </div>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-compo"><strong>4 variétés × 3 pièces</strong> — 12 pièces par personne · 1 variété Premium</div>
+          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="fsub-label">Composition du moment</div>
+          <ul class="fpieces">
+            <li><div class="fp-name">Guacamole truite fumée<em>Guacamole, truite fumée</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Chèvre miel<em>Chèvre, miel</em></div></li>
+            <li><div class="fp-name">Taboulé libanais<em>Persil, boulgour, citron, herbes</em></div></li>
+            <li><div class="fp-name">Caviar d’aubergine feta<em>Caviar d’aubergine, feta, herbes fraîches</em></div></li>
+          </ul>
+          <div class="fcard-incl"><strong>Offert :</strong> crackers &amp; crudités</div>
+        </div>
+      </div>
+
+      <div class="fcard" onclick="selectFormule(1,this)">
+        <div class="fcard-check">✓</div>
+        <div class="fcard-head">
+          <div class="fcard-name">Cocktail Premium</div>
+          <div class="fcard-badge">⭐ Recommandé</div>
+          <div class="fcard-tagline">Davantage de pièces Premium pour marquer les esprits</div>
+          <div class="fcard-price-row">
+            <div class="fcard-price">28 €<sub> / pers.</sub></div>
+            <div class="fcard-pieces">15 pièces</div>
+          </div>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-compo"><strong>5 variétés × 3 pièces</strong> — 15 pièces par personne · 3 variétés Premium</div>
+          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="fsub-label">Composition du moment</div>
+          <ul class="fpieces">
+            <li><div class="fp-name">Noix de Saint-Jacques crème citron<em>Noix de Saint-Jacques, crème citron</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Verrine guacamole, truite, maïs<em>Guacamole, truite, maïs</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Tataki de dorade<em>Citron vert, mangue, granola salé</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Chèvre miel</div></li>
+            <li><div class="fp-name">Crevette crème coco<em>Gingembre, citron vert</em></div></li>
+          </ul>
+          <div class="fcard-incl"><strong>Offert :</strong> 1 dip au choix · crackers &amp; crudités</div>
+        </div>
+      </div>
+
+      <div class="fcard" onclick="selectFormule(2,this)">
+        <div class="fcard-check">✓</div>
+        <div class="fcard-head">
+          <div class="fcard-name">Buffet Dînatoire</div>
+          <div class="fcard-badge ghost" aria-hidden="true">&nbsp;</div>
+          <div class="fcard-tagline">Pièces chaudes et animation culinaire en direct</div>
+          <div class="fcard-price-row">
+            <div class="fcard-price">38 €<sub> / pers.</sub></div>
+            <div class="fcard-pieces">18 pièces</div>
+          </div>
+        </div>
+        <div class="fcard-body">
+          <div class="fcard-compo"><strong>6 variétés × 3 pièces</strong> — 18 pièces par personne · 2 chaudes · 1 live cooking</div>
+          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="fsub-label">Composition du moment</div>
+          <ul class="fpieces">
+            <li><div class="fp-name">Œufs de truite crème de melon<em>Œufs de truite, crème de melon</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Stracciatella, boulettes de melon, pesto</div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Maki de chèvre courgette<em>Œuf de truite</em></div><span class="tag-prem">premium</span></li>
+            <li><div class="fp-name">Boulettes d’agneau kefta grillé<em>Avec houmous banane plantain</em></div><span class="tag-hot">chaud</span></li>
+            <li><div class="fp-name">Halloumi et chorizo grillé olive</div><span class="tag-hot">chaud</span></li>
+            <li><div class="fp-name">Ceviche de dorade<em>Toast, huile d’olive, citron, menthe, aneth</em></div><span class="tag-live">live cooking</span></li>
+          </ul>
+          <div class="fcard-incl"><strong>Inclus :</strong> 2 dips au choix · crackers &amp; crudités · 1 box découverte</div>
+        </div>
+      </div>
+
+    
+</div>
+
+    
+
+
+    <div class="piece-builder" id="piece-builder" style="display:none"></div>
+</div>
+  <div class="section col-main">
+    <div class="step-head">
+      <div class="step-line"><span class="step-number">3</span><div class="step-title">Parlez-nous de votre événement</div></div>
+      <div class="step-help">Renseignez les informations essentielles pour recevoir une proposition adaptée.</div>
+    </div>
+    <div class="fields">
+      <div class="field-row">
+        <div class="field"><label>Société ou nom</label><input type="text" id="client-nom" name="family-name" autocomplete="organization" placeholder="Nom ou société"></div>
+        <div class="field"><label>Personne à contacter</label><input type="text" id="client-contact" name="given-name" autocomplete="given-name" placeholder="Prénom"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Email</label><input type="email" id="client-email" name="email" autocomplete="email" inputmode="email" placeholder="you@mail.com"></div>
+        <div class="field"><label>Téléphone</label><input type="tel" id="client-tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="+33 6 …"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Date</label><input type="date" id="evt-date"></div>
+        <div class="field"><label>Type</label>
+          <select id="evt-type">
+            <option selected="selected">Cocktail d'entreprise</option>
+            <option>Cocktail pour vernissage</option>
+            <option>Anniversaire</option>
+            <option>Séminaire</option>
+            <option>Mariage</option>
+            <option>Autre</option>
+          </select>
+        </div>
+      </div>
+      <div class="field field-full"><label>Lieu</label><input type="text" id="evt-lieu" name="street-address" autocomplete="street-address" placeholder="Adresse ou nom de salle"></div>
+    </div>
+    <div class="pers-stepper">
+      <div class="pers-label">Nombre de <strong>personnes</strong></div>
+      <div class="stepper">
+        <button type="button" class="step-btn" onclick="changePerso(-5)">−</button>
+        <span class="step-val" id="nb-pers-display">20</span>
+        <button type="button" class="step-btn" onclick="changePerso(+5)">+</button>
+      </div>
+    </div>
+  </div>
+
+
+<div class="section col-main">
+    <div class="section-head"><div class="section-label">Précisions utiles</div></div>
+    <div class="note-wrap">
+      <textarea class="note-area" placeholder="Allergies, contraintes logistiques, heure de livraison, demandes spéciales…" rows="3"></textarea>
+    </div>
+  </div>
+
+  <div class="sidebar no-print">
+    <div class="sticky-bar">
+      <div>
+        <div class="sb-label">Total TTC</div>
+        <div class="sb-price" id="sb-ttc">—</div>
+        <div class="sb-sub" id="sb-sub">Choisissez une formule</div>
+      </div>
+      <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
+    </div>
+
+    <div class="section col-side">
+      <div class="section-head"><div class="section-label">Récapitulatif</div></div>
+      <div class="total-detail">
+        <div class="tline"><span class="tl">Formule (<span id="tl-fname">À sélectionner</span>)</span><span class="tv" id="tl-f">0 €</span></div>
+        <div class="tline options-summary"><span class="tl">Options</span><span class="tv" id="tl-opt">0 €</span></div>
+        <div class="tline"><span class="tl">Sous-total HT</span><span class="tv" id="tl-ht">0 €</span></div>
+        <div class="tline"><span class="tl">TVA 10%</span><span class="tv" id="tl-tva">0 €</span></div>
+        <div class="tline final"><span class="tl">Total TTC</span><span class="tv" id="tl-ttc">0 €</span></div>
+        <div class="min-warn" id="min-warn">⚠ Minimum de commande : 20 personnes</div>
+      </div>
+    </div>
+
+    
+
+<div class="conds">
+  <div>
+    <div class="cond-title">Réservation</div>
+    <div class="cond-text">
+      Confirmation après acompte et validation du devis.
+    </div>
+  </div>
+
+  <div>
+    <div class="cond-title">Paiement</div>
+    <div class="cond-text">
+      40% à la réservation.<br>
+      Solde 25 jours avant l’événement.<br>
+      Virement ou carte bancaire.
+    </div>
+  </div>
+
+  <div>
+    <div class="cond-title">Modification</div>
+    <div class="cond-text">
+      Modifications possibles jusqu’à 72h avant l’événement.
+    </div>
+  </div>
+
+  <div>
+    <div class="cond-title">Annulation</div>
+    <div class="cond-text">
+      Acompte non remboursable.<br>
+      À moins de 25 jours, la commande reste due.
+    </div>
+  </div>
+
+  <div>
+    <div class="cond-title">Format</div>
+    <div class="cond-text">
+      Minimum 20 personnes.
+    </div>
+  </div>
+</div>
+
+<div class="actions">
+      <button type="button" class="btn-act" onclick="resetForm()">Réinitialiser</button>
+      <button type="button" class="btn-act" onclick="window.print()">PDF</button>
+      <button type="button" class="btn-act" onclick="openModal()">Envoyer la demande ✉</button>
+    </div>
+  </div>
+
+  <!-- sticky-bar mobile (hors sidebar) -->
+  <div class="sticky-bar-mobile no-print is-empty">
+    <div>
+      <div class="sb-label">Total TTC</div>
+      <div class="sb-price" id="sb-ttc-mobile">—</div>
+      <div class="sb-sub" id="sb-sub-mobile">Choisissez une formule</div>
+    </div>
+    <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
+  </div>
+
+</div>
+
+<!-- MODAL FORMSPREE -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal" id="modal">
+    <div class="modal-handle"></div>
+    <div id="modal-body-default">
+      <div class="modal-title">Envoyer votre demande</div>
+      <div class="modal-sub">Vérifiez votre sélection avant de l’envoyer à MiL Traiteur.</div>
+      <div class="modal-recap" id="modal-recap"></div>
+      <button class="btn-send" id="btn-send" onclick="sendFormspree()">
+        <span>Envoyer ma demande</span> <span>→</span>
+      </button>
+      <div class="send-error" id="send-error">Une erreur est survenue. Veuillez réessayer.</div>
+      <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+    </div>
+    <div id="modal-body-success" style="display:none">
+      <div class="send-success">
+        <div class="ok-icon">✅</div>
+        <h3>Demande envoyée</h3>
+        <p>L’équipe MiL Traiteur vous recontactera pour confirmer les détails et finaliser votre devis.</p>
+      </div>
+      <button class="btn-send" style="margin-top:24px" onclick="closeModal()">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const FORMULES = [
+  { name: 'Cocktail Découverte', price: 22, varieties: 4, premium: 1, hot: 0, live: 0, dips: 0, pieces: 12 },
+  { name: 'Cocktail Premium', price: 28, varieties: 5, premium: 3, hot: 0, live: 0, dips: 1, pieces: 15 },
+  { name: 'Buffet Dînatoire', price: 38, varieties: 6, premium: 0, premiumMax: 3, hot: 2, live: 1, dips: 2, pieces: 18 },
+];
+
+const PIECES = [
+  /* PIÈCES PREMIUM — uniquement carte MIL */
+  { id:'guacamole-truite', name:'Guacamole truite fumée', cat:'premium', diet:'poisson', desc:'Guacamole, truite fumée' },
+  { id:'foie-gras-figue', name:'Pain d’épice foie gras figue', cat:'premium', diet:'viande', fr:true, desc:'Pain d’épice, foie gras, figue' },
+  { id:'oeufs-truite-melon', name:'Œufs de truite crème de melon', cat:'premium', diet:'poisson', desc:'Œufs de truite, crème de melon' },
+  { id:'saint-jacques-citron', name:'Noix de Saint-Jacques crème citron', cat:'premium', diet:'poisson', fr:true, desc:'Saint-Jacques, crème citron' },
+  { id:'kefta-agneau-houmous', name:'Boulettes d’agneau kefta grillé', cat:'premium', diet:'viande', hot:true, desc:'Servies avec houmous banane plantain' },
+  { id:'avocat-truite-mais', name:'Verrine guacamole, truite, maïs', cat:'premium', diet:'poisson', desc:'Guacamole, truite, maïs' },
+  { id:'houmous-butternut', name:'Houmous butternut zaatar', cat:'premium', diet:'vegan', desc:'Houmous butternut, zaatar' },
+  { id:'tataki-dorade', name:'Tataki de dorade', cat:'premium', diet:'poisson', desc:'Citron vert, mangue, granola salé' },
+  { id:'stracciatella-melon', name:'Stracciatella, boulettes de melon, pesto', cat:'premium', diet:'vege', desc:'Stracciatella, melon, pesto' },
+  { id:'creamy-troute-yuzu', name:'Truite crémeuse au yuzu', cat:'premium', diet:'poisson', desc:'Truite, crème légère au yuzu' },
+  { id:'mi-cuit-thon', name:'Mi-cuit de thon mayonnaise', cat:'premium', diet:'poisson', desc:'Thon mi-cuit, mayonnaise' },
+  { id:'maki-chevre-courgette', name:'Maki de chèvre courgette', cat:'premium', diet:'vege', desc:'Chèvre, courgette, œuf de truite' },
+
+  /* PIÈCES DÉCOUVERTE — uniquement carte MIL */
+  { id:'chevre-miel', name:'Chèvre miel', cat:'decouverte', diet:'vege', fr:true, desc:'Chèvre, miel' },
+  { id:'guacamole-crevette', name:'Guacamole crevette', cat:'decouverte', diet:'poisson', desc:'Guacamole, crevette' },
+  { id:'kefta-decouverte', name:'Boulettes d’agneau kefta', cat:'decouverte', diet:'viande', hot:true, desc:'Avec houmous banane plantain' },
+  { id:'halloumi-chorizo', name:'Halloumi et chorizo grillé olive', cat:'decouverte', diet:'viande', hot:true, desc:'Halloumi, chorizo grillé, olive' },
+  { id:'taboule-libanais', name:'Taboulé libanais', cat:'decouverte', diet:'vegan', desc:'Persil, boulgour, citron, herbes' },
+  { id:'creme-courge', name:'Crème de courge zaatar cumin', cat:'decouverte', diet:'vegan', desc:'Courge, zaatar, cumin' },
+  { id:'crevette-coco', name:'Crevette crème coco gingembre citron vert', cat:'decouverte', diet:'poisson', desc:'Crevette, coco, gingembre, citron vert' },
+  { id:'boeuf-seche-vitelotte', name:'Pomme de terre vitelotte, bœuf séché', cat:'decouverte', diet:'viande', fr:true, desc:'Moutarde à l’ancienne, échalotes confites, cornichon, herbes fraîches' },
+  { id:'caviar-aubergine-feta', name:'Caviar d’aubergine feta', cat:'decouverte', diet:'vege', desc:'Caviar d’aubergine, feta, herbes fraîches' },
+
+  /* LIVE COOKING — pièces préparées / finalisées devant les invités */
+  { id:'live-cote-boeuf', name:'Côtes de bœuf à la découpe', cat:'live', diet:'viande', live:true, desc:'Sucrine, frites allumettes, sauce échalote poivre' },
+  { id:'live-tartare-bavette', name:'Tartare de bavette au couteau', cat:'live', diet:'viande', live:true, desc:'Biscuit salé, sauce échalote cornichon' },
+  { id:'live-ceviche-dorade', name:'Ceviche de dorade', cat:'live', diet:'poisson', live:true, desc:'Toast, huile d’olive, citron, menthe, aneth' },
+  { id:'live-brochettes-agneau', name:'Brochettes agneau & légumes grillés', cat:'live', diet:'viande', live:true, desc:'Sauce yaourt, menthe, cumin, citron' },
+  { id:'live-risotto-fregola', name:'Risotto de frégola', cat:'live', diet:'vege', live:true, desc:'Champignons noirs, pecorino, tuile de parmesan' },
+  { id:'live-wok-khao-pad', name:'Wok — khao pad', cat:'live', diet:'viande', live:true, desc:'Riz sauté, légumes croquants, poulet, citronnelle, menthe, soja' },
+  { id:'live-crepes-salees', name:'Crêpes salées', cat:'live', diet:'vege', live:true, desc:'Accompagnements préparés devant vous' },
+];
+
+const DIPS = ['Houmous nature','Houmous betterave','Houmous butternut','Houmous banane plantain','Guacamole','Caviar d’aubergine','Tzatziki'];
+let activePieceTab = 'all';
+let selectedPieces = [];
+let selectedDips = [];
+
+const BOXES = [
+  { id: 'box-mexicain',    name: 'Box Mexicaine',        tags: ['viande'], price: 70, desc: 'Tortillas à tremper, chili bœuf maison, poivrons, maïs grillé, crudités, guacamole, sauce salsa.' },
+  { id: 'box-mezze',      name: 'Box Mezzé',             tags: ['vege','vegan'], price: 70, desc: 'Tzatziki, duo de houmous, caviar d\'aubergine, shawarma poulet, crudités, olives, légumes confits.' },
+  { id: 'box-mixte',      name: 'Box Mixte',             tags: ['viande','vege'], price: 70, desc: 'Charcuterie fine, fromages, légumes de saison et accompagnements à partager.' },
+  { id: 'box-charcuterie',name: 'Box Charcuteries fines',tags: ['viande'], price: 60, desc: 'Jambon de pays, figues, cornichons, fruits secs et crudités.' },
+  { id: 'box-fromage',    name: 'Box Fromage',           tags: ['vege'], price: 60, desc: 'Sélection de fromages, dattes, fruits secs, beurre, miel et sablés.' },
+  { id: 'box-fruits',     name: 'Box Fruits frais',      tags: ['vegan','frais'], price: 50, desc: 'Fruits frais découpés, gâteaux sablés et sirop d\'érable.' },
+  { id: 'box-legumes',    name: 'Box Légumes',           tags: ['vegan'], price: 40, desc: 'Légumes de saison découpés, légumes confits, tzatziki et tapenade d\'olive.' },
+];
+
+let boxState = {};
+BOXES.forEach(b => { boxState[b.id] = { on: false, qty: 1 }; });
+const OPTIONS = [
+  { id: 'chaud1', name: 'Pièces chaudes', desc: 'Tempura gambas, falafel, mini croq — chaud', unit: '3.50 € / pièce · min. 20 pcs', fixe: 70, perPers: false, defaultOn: false, defaultQty: 1 },
+  { id: 'live', name: 'Live cooking', desc: 'Côtes de bœuf, gambas flambées, ceviche, risotto…', unit: 'Forfait +200 €', fixe: 200, perPers: false, defaultOn: false, defaultQty: 1 },
+  { id: 'street', name: 'Street-food du monde', desc: 'Hot dog, tacos mexicains, lobster rolls, shawarma…', unit: '12 € / pers.', fixe: 0, perPers: true, prixPers: 12, defaultOn: false, defaultQty: 1 },
+  { id: 'cafe', name: 'Café & cocktails', desc: 'Latte Paris-Brest, Espresso Martini, cafés filtre', unit: '6 € / pers.', fixe: 0, perPers: true, prixPers: 6, defaultOn: false, defaultQty: 1 },
+  { id: 'champ', name: 'Champagne Bajabule', desc: 'Sélection maison · 6 pers. / bouteille', unit: '45 € / btl', fixe: 45, perPers: false, defaultOn: false, defaultQty: 1 },
+  { id: 'boissons', name: 'Cocktails en jarre', desc: 'Thé glacé, jus fraise-rose, ananas-gingembre…', unit: '5 € / pers.', fixe: 0, perPers: true, prixPers: 5, defaultOn: false, defaultQty: 1 },
+];
+let state = { formule: null, nbPers: 20, keepMoment: null, options: {} };
+OPTIONS.forEach(o => { state.options[o.id] = { on: false, qty: 0 }; });
+
+function fmt(n) { return n.toLocaleString('fr-FR') + ' €'; }
+function getNb() { return state.nbPers; }
+
+function catLabel(cat) {
+  return cat === 'premium' ? 'Premium' : cat === 'live' ? 'Live Cooking' : 'Découverte';
+}
+function dietLabel(diet) {
+  return diet === 'vegan' ? 'Vegan' : diet === 'vege' ? 'Végé' : diet === 'viande' ? 'Viande' : diet === 'poisson' ? 'Poisson' : '';
+}
+function pieceTags(p) {
+  const main = `<span class="piece-tag ${p.cat}">${catLabel(p.cat)}</span>`;
+  const extra = [];
+  if (p.diet) extra.push(`<span class="piece-tag ${p.diet}">${dietLabel(p.diet)}</span>`);
+  if (p.hot) extra.push(`<span class="piece-tag reheating">Chaud</span>`);
+  if (p.fr) extra.push(`<span class="piece-tag fr">FR</span>`);
+  return `<div class="piece-tags-main">${main}</div><div class="piece-tags-extra">${extra.join('')}</div>`;
+}
+function boxBadgeHtml(b) {
+  const badges = b.tags || [];
+  return badges.length ? `<div class="box-badges">${badges.map(t => `<span class="box-badge box-badge-${t}">${dietLabel(t) || t}</span>`).join('')}</div>` : `<div class="box-badges"></div>`;
+}
+function selectedPieceObjects() {
+  return selectedPieces.map(id => PIECES.find(p => p.id === id)).filter(Boolean);
+}
+function countCat(cat) {
+  return selectedPieceObjects().filter(p => cat === 'chaud' ? !!p.hot : cat === 'live' ? !!p.live || p.cat === 'live' : p.cat === cat).length;
+}
+function canSelectPiece(piece) {
+  if (state.formule === null) return false;
+  if (selectedPieces.includes(piece.id)) return true;
+  const f = FORMULES[state.formule];
+  if (selectedPieces.length >= f.varieties) return false;
+  if (piece.hot && f.hot === 0) return false;
+  if (piece.hot && f.hot > 0 && countCat('chaud') >= f.hot) return false;
+  if ((piece.live || piece.cat === 'live') && (f.live || 0) === 0) return false;
+  if ((piece.live || piece.cat === 'live') && (f.live || 0) > 0 && countCat('live') >= (f.live || 0)) return false;
+  if (piece.cat === 'premium') {
+    const premiumLimit = f.premiumMax || f.premium;
+    if (premiumLimit && countCat('premium') >= premiumLimit) return false;
+  }
+
+  // Évite une sélection impossible à compléter : si l'utilisateur remplit tous les slots
+  // avec des pièces non adaptées, les minimums premium / chaud deviennent bloqués.
+  const simulated = [...selectedPieces, piece.id]
+    .map(id => PIECES.find(p => p.id === id))
+    .filter(Boolean);
+  const remaining = f.varieties - simulated.length;
+  const prem = simulated.filter(p => p.cat === 'premium').length;
+  const hot = simulated.filter(p => p.hot).length;
+  const live = simulated.filter(p => p.live || p.cat === 'live').length;
+  const missingPremium = Math.max(0, f.premium - prem);
+  const missingHot = Math.max(0, f.hot - hot);
+  const missingLive = Math.max(0, (f.live || 0) - live);
+  return Math.max(missingPremium, missingHot, missingLive) <= remaining;
+}
+function togglePiece(id) {
+  const piece = PIECES.find(p => p.id === id);
+  if (!piece || !canSelectPiece(piece)) return;
+  selectedPieces = selectedPieces.includes(id) ? selectedPieces.filter(x => x !== id) : [...selectedPieces, id];
+  rebuild();
+}
+function preferredPieceTab() {
+  if (state.formule === null) return 'premium';
+  const f = FORMULES[state.formule];
+  if (f.hot > 0) return 'chaud';
+  if (f.premium > 0) return 'premium';
+  return 'decouverte';
+}
+function setPieceTab(tab) { activePieceTab = tab; buildPieceSelector(); }
+function toggleDip(name) {
+  if (state.formule === null) return;
+  const max = FORMULES[state.formule].dips;
+  if (max === 0) return;
+  selectedDips = selectedDips.includes(name) ? selectedDips.filter(x => x !== name) : (selectedDips.length < max ? [...selectedDips, name] : selectedDips);
+  rebuild();
+}
+function selectionStatusText() {
+  if (state.formule === null) return 'Aucune formule sélectionnée.';
+  if (state.keepMoment === true) return 'Composition MiL incluse.';
+  if (state.keepMoment === null) return 'Mode de composition non choisi.';
+  const f = FORMULES[state.formule];
+  const total = selectedPieces.length;
+  const prem = countCat('premium');
+  const hot = countCat('chaud');
+  const live = countCat('live');
+  const problems = [];
+  if (total < f.varieties) problems.push(`${f.varieties - total} variété(s) à choisir`);
+  if (prem < f.premium) problems.push(`${f.premium - prem} premium manquante(s)`);
+  if (f.hot > 0 && hot < f.hot) problems.push(`${f.hot - hot} pièce(s) chaude(s) manquante(s)`);
+  if ((f.live || 0) > 0 && live < (f.live || 0)) problems.push(`${(f.live || 0) - live} live cooking manquant(s)`);
+  if (f.dips > 0 && selectedDips.length < f.dips) problems.push(`${f.dips - selectedDips.length} dip(s) à choisir`);
+  return problems.length ? problems.join(' · ') : 'Sélection complète.';
+}
+
+const FORMULE_MOMENT_TEXT = [
+  {
+    pieces: ['Guacamole truite fumée — premium', 'Chèvre miel', 'Taboulé libanais', 'Caviar d’aubergine feta'],
+    dips: []
+  },
+  {
+    pieces: ['Noix de Saint-Jacques crème citron — premium', 'Verrine guacamole, truite, maïs — premium', 'Tataki de dorade — premium', 'Chèvre miel', 'Crevette crème coco gingembre citron vert'],
+    dips: ['1 dip au choix']
+  },
+  {
+    pieces: ['Tataki de dorade — premium', 'Stracciatella, boulettes de melon, pesto — premium', 'Maki de chèvre courgette — premium possible', 'Boulettes d’agneau kefta grillé — chaud, avec houmous de banane plantain', 'Halloumi et chorizo grillé olive — chaud', 'Ceviche de dorade — live cooking'],
+    dips: ['2 dips au choix']
+  }
+];
+function buildMomentChoice() {
+  const el = document.getElementById('moment-choice');
+  if (!el) return;
+  const selectedName = state.formule === null ? '' : FORMULES[state.formule].name;
+  const chefActive = state.keepMoment === true;
+  const customActive = state.keepMoment === false;
+  let status = '<strong>Commencez ici :</strong> choisissez l’une des deux méthodes de composition.';
+  if (selectedName) {
+    status = `<strong>${selectedName}</strong> · ${chefActive ? 'sélection MiL prête à valider' : customActive ? 'composition personnalisée en cours' : 'choisissez votre méthode de composition'}`;
+  } else if (chefActive) {
+    status = '<strong>Sélection MiL choisie.</strong> Sélectionnez maintenant votre formule.';
+  } else if (customActive) {
+    status = `<strong>Composition personnalisée choisie.</strong> Les ${PIECES.length} propositions s’afficheront après le choix de la formule.`;
+  }
+
+  el.style.display = '';
+  el.innerHTML = `
+    <div class="moment-choice-inner">
+      <button type="button" class="moment-choice-btn ${chefActive ? 'active' : ''}" aria-pressed="${chefActive}" onclick="setCompositionMode(true)">
+        <span class="choice-chip">Recommandé</span>
+        <strong>Sélection MiL prête à valider</strong>
+        <span>Une composition équilibrée s’affiche directement dans la formule choisie.</span>
+      </button>
+      <button type="button" class="moment-choice-btn ${customActive ? 'active' : ''}" aria-pressed="${customActive}" onclick="setCompositionMode(false)">
+        <span class="choice-chip">Sur mesure</span>
+        <strong>Je compose moi-même</strong>
+        <span>Accédez aux ${PIECES.length} propositions de la carte et choisissez chaque variété.</span>
+      </button>
+      <div class="choice-status">${status}</div>
+    </div>`;
+}
+function setCompositionMode(keep) {
+  if (state.keepMoment !== keep) {
+    selectedPieces = [];
+    selectedDips = [];
+    activePieceTab = 'all';
+  }
+  state.keepMoment = keep;
+  rebuild();
+}
+
+function formatSelectionText(separator = ', ') {
+  if (state.formule !== null && state.keepMoment === true) {
+    const m = FORMULE_MOMENT_TEXT[state.formule] || { pieces: [], dips: [] };
+    return {
+      pieces: m.pieces.join(separator) || 'Formule du moment',
+      dips: m.dips.length ? m.dips.join(separator) : 'Aucun / inclus selon formule'
+    };
+  }
+  const pieces = selectedPieceObjects().map(p => `${p.name} (${catLabel(p.cat)})`).join(separator) || 'À composer';
+  const dips = selectedDips.length ? selectedDips.join(separator) : 'Aucun / à définir';
+  return { pieces, dips };
+}
+function buildInlineFormulaRecap() {
+  document.querySelectorAll('[data-inline-chef]').forEach(el => {
+    el.innerHTML = '';
+    el.style.display = 'none';
+  });
+  if (state.formule === null || state.keepMoment !== true) return;
+
+  const card = document.querySelectorAll('.fcard')[state.formule];
+  const target = card ? card.querySelector('[data-inline-chef]') : null;
+  if (!target) return;
+
+  const f = FORMULES[state.formule];
+  const m = FORMULE_MOMENT_TEXT[state.formule] || { pieces: [], dips: [] };
+  target.style.display = 'block';
+  target.innerHTML = `
+    <div class="inline-chef-top">
+      <div>
+        <div class="inline-chef-title">Sélection MiL incluse</div>
+        <div class="inline-chef-sub">${f.varieties} variétés · ${f.pieces} pièces par personne</div>
+      </div>
+      <span class="inline-chef-badge">Prête à valider</span>
+    </div>
+    <ul class="inline-chef-list">${m.pieces.map(piece => `<li>${piece}</li>`).join('')}</ul>
+    ${m.dips.length ? `<div class="inline-chef-dips"><strong>Dips inclus :</strong> ${m.dips.join(', ')}</div>` : ''}`;
+}
+
+function buildPieceSelector() {
+  const el = document.getElementById('piece-builder');
+  if (!el) return;
+  if (state.formule === null) {
+    el.className = 'piece-builder empty';
+    el.style.display = 'none';
+    el.innerHTML = '';
+    return;
+  }
+  const f = FORMULES[state.formule];
+  if (state.keepMoment !== false) {
+    el.className = 'piece-builder';
+    el.style.display = 'none';
+    el.innerHTML = '';
+    return;
+  }
+  el.className = 'piece-builder';
+  el.style.display = '';
+  const total = selectedPieces.length;
+  const prem = countCat('premium');
+  const hot = countCat('chaud');
+  const live = countCat('live');
+  const countBy = predicate => PIECES.filter(predicate).length;
+  const tabs = [
+    ['all',`Toute la carte (${PIECES.length})`],
+    ['premium',`Premium (${countBy(p => p.cat === 'premium')})`],
+    ['decouverte',`Découverte (${countBy(p => p.cat === 'decouverte')})`],
+    ['chaud',`Chaud (${countBy(p => p.hot)})`],
+    ['live',`Live Cooking (${countBy(p => p.live || p.cat === 'live')})`],
+    ['vege',`Végé (${countBy(p => p.diet === 'vege')})`],
+    ['vegan',`Vegan (${countBy(p => p.diet === 'vegan')})`],
+    ['viande',`Viande (${countBy(p => p.diet === 'viande')})`],
+    ['poisson',`Poisson (${countBy(p => p.diet === 'poisson')})`]
+  ];
+  const visible = PIECES.filter(p => activePieceTab === 'all' || p.cat === activePieceTab || p.diet === activePieceTab || (activePieceTab === 'chaud' && p.hot) || (activePieceTab === 'live' && (p.live || p.cat === 'live')));
+  const pieceRank = p => {
+    const catRank = p.cat === 'decouverte' ? 0 : p.cat === 'premium' ? 1 : p.cat === 'live' ? 2 : 3;
+    const disabledRank = (!canSelectPiece(p) && !selectedPieces.includes(p.id)) ? 1 : 0;
+    return catRank * 100 + disabledRank * 50 + PIECES.findIndex(x => x.id === p.id);
+  };
+  visible.sort((a,b) => pieceRank(a) - pieceRank(b));
+  const renderPieceRow = p => {
+    const sel = selectedPieces.includes(p.id);
+    const dis = !canSelectPiece(p) && !sel;
+    return `<div class="piece-row ${sel ? 'selected' : ''} ${dis ? 'disabled' : ''}" onclick="togglePiece('${p.id}')">
+      <div class="piece-check">✓</div>
+      <div class="piece-info">
+        <div class="piece-name">${p.name}</div>
+        <div class="piece-desc">${p.desc}</div>
+        ${dis ? '<div class="piece-unavailable">Indisponible avec votre sélection actuelle</div>' : ''}
+      </div>
+      <div class="piece-tags">${pieceTags(p)}</div>
+    </div>`;
+  };
+  const renderPieceList = () => {
+    if (activePieceTab !== 'all') return visible.map(renderPieceRow).join('');
+    const decouverte = visible.filter(p => p.cat === 'decouverte');
+    const premium = visible.filter(p => p.cat === 'premium');
+    const livePieces = visible.filter(p => p.cat === 'live' || p.live);
+    return `
+      <div class="piece-section-title decouverte-title">Pièces Découverte</div>
+      ${decouverte.map(renderPieceRow).join('')}
+      <div class="piece-section-title">Pièces Premium</div>
+      ${premium.map(renderPieceRow).join('')}
+      <div class="piece-section-title live-title">Live Cooking</div>
+      ${livePieces.map(renderPieceRow).join('')}`;
+  };
+  const rules = [
+    `${f.varieties} variétés à choisir`,
+    `${f.pieces} pièces par personne`,
+    f.premium ? `${f.premium} Premium minimum` : (f.premiumMax ? `jusqu’à ${f.premiumMax} Premium` : ''),
+    f.hot ? `${f.hot} pièces chaudes` : '',
+    (f.live || 0) ? `${f.live} live cooking` : ''
+  ].filter(Boolean).join(' · ');
+  el.innerHTML = `
+    <div class="piece-guide">
+      <div class="piece-guide-title">Toute la carte est disponible</div>
+      <div class="piece-guide-text"><strong>${f.name}</strong> · ${rules}. Les choix momentanément incompatibles restent visibles, mais sont grisés.</div>
+    </div>
+    <div class="piece-progress" style="grid-template-columns:repeat(${2 + (f.hot ? 1 : 0) + ((f.live || 0) ? 1 : 0)},1fr)">
+      <div class="piece-stat ${total >= f.varieties ? 'ok' : ''}"><strong>${total}/${f.varieties}</strong><span>variétés</span></div>
+      <div class="piece-stat ${f.premiumMax ? (prem <= f.premiumMax ? 'ok' : '') : (prem >= f.premium ? 'ok' : '')}"><strong>${prem}/${f.premiumMax || f.premium}</strong><span>premium</span></div>
+      ${f.hot ? `<div class="piece-stat ${hot >= f.hot ? 'ok' : ''}"><strong>${hot}/${f.hot}</strong><span>chaud</span></div>` : ''}
+      ${(f.live || 0) ? `<div class="piece-stat ${live >= (f.live || 0) ? 'ok' : ''}"><strong>${live}/${f.live}</strong><span>live</span></div>` : ''}
+    </div>
+    <div class="piece-filter-help">Filtrez les ${PIECES.length} propositions :</div>
+    <div class="piece-tabs">${tabs.map(([id,label]) => `<button type="button" class="piece-tab ${activePieceTab === id ? 'active' : ''}" onclick="setPieceTab('${id}')">${label}</button>`).join('')}</div>
+    <div class="piece-list">
+      ${renderPieceList()}
+    </div>
+    ${f.dips > 0 ? `<div class="dip-select"><div class="dip-title">Dips offerts — ${selectedDips.length}/${f.dips}</div><div class="dip-grid">${DIPS.map(d => `<button type="button" class="dip-pill ${selectedDips.includes(d) ? 'selected' : ''}" onclick="toggleDip('${d.replace(/'/g,"\\'")}')">${d}</button>`).join('')}</div></div>` : ''}
+    <div class="piece-alert ${selectionStatusText() === 'Sélection complète.' ? 'complete' : ''}">${selectionStatusText()}</div>`;
+}
+
+function calcBox() {
+  let t = 0;
+  BOXES.forEach(b => { if (boxState[b.id].on) t += b.price * boxState[b.id].qty; });
+  return t;
+}
+
+function buildBoxes() {
+  const el = document.getElementById('box-list');
+  if (!el) return;
+  el.innerHTML = '';
+  BOXES.forEach(b => {
+    const s = boxState[b.id];
+    const div = document.createElement('div');
+    div.className = 'box-card' + (s.on ? ' selected' : '');
+    div.onclick = () => { boxState[b.id].on = !boxState[b.id].on; rebuild(); };
+    div.innerHTML = `
+      <div class="box-card-top">
+        <div class="box-card-title-area">
+          <div class="box-card-name">${b.name}</div>
+          ${boxBadgeHtml(b)}
+        </div>
+        <div class="box-tog-wrap" onclick="event.stopPropagation(); boxState['${b.id}'].on=!boxState['${b.id}'].on; rebuild();">
+          <div class="box-tog ${s.on ? 'on' : ''}"></div>
+        </div>
+      </div>
+      <div class="box-card-desc">${b.desc}</div>
+      <div class="box-card-bottom">
+        <div class="box-card-price">${b.price} €</div>
+        ${s.on ? `
+        <div class="box-counter" onclick="event.stopPropagation()">
+          <button type="button" class="box-c-btn" onclick="changeBoxQty('${b.id}',-1)">−</button>
+          <span class="box-c-val">${s.qty}</span>
+          <button type="button" class="box-c-btn" onclick="changeBoxQty('${b.id}',1)">+</button>
+          <span class="box-c-total">${b.price * s.qty} €</span>
+        </div>` : `<div class="box-tog-minus">—</div>`}
+      </div>`;
+    el.appendChild(div);
+  });
+}
+
+function changeBoxQty(id, d) {
+  boxState[id].qty = Math.max(1, boxState[id].qty + d);
+  rebuild();
+}
+
+function changePerso(delta) {
+  state.nbPers = Math.max(20, state.nbPers + delta);
+  document.getElementById('nb-pers-display').textContent = state.nbPers;
+  rebuild();
+}
+
+function calcF() {
+  if (state.formule === null) return 0;
+  return getNb() * FORMULES[state.formule].price;
+}
+function calcOpt() {
+  let t = 0;
+  OPTIONS.forEach(o => {
+    const s = state.options[o.id];
+    if (!s || s.qty <= 0) return;
+    t += o.perPers ? getNb() * o.prixPers * s.qty : o.fixe * s.qty;
+  });
+  return t;
+}
+
+function updateTotals() {
+  const f = calcF(), opt = calcOpt(), box = calcBox(), ht = f + opt + box;
+  const tva = ht * 0.1, ttc = Math.round(ht + tva);
+  const formuleName = state.formule === null ? 'À sélectionner' : FORMULES[state.formule].name;
+  const subText = (state.formule === null && opt === 0 && box === 0)
+    ? 'Sélectionnez une formule'
+    : `${getNb()} pers. · estimation TTC`;
+
+  document.getElementById('tl-fname').textContent = formuleName;
+  document.getElementById('tl-f').textContent = fmt(f);
+  document.getElementById('tl-opt').textContent = fmt(opt);
+  document.getElementById('tl-ht').textContent = fmt(ht);
+  document.getElementById('tl-tva').textContent = fmt(Math.round(tva));
+  document.getElementById('tl-ttc').textContent = fmt(ttc);
+
+  ['sb-ttc', 'sb-ttc-mobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = state.formule === null && opt === 0 ? '—' : fmt(ttc);
+  });
+
+  ['sb-sub', 'sb-sub-mobile'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = subText;
+  });
+
+  const w = document.getElementById('min-warn');
+  (ht < 400 && ht > 0) ? w.classList.add('show') : w.classList.remove('show');
+}
+
+function buildOpts() {
+  const el = document.getElementById('opt-list');
+  if (!el) {
+    updateTotals();
+    return;
+  }
+  el.innerHTML = '';
+  OPTIONS.forEach(o => {
+    const s = state.options[o.id];
+    const active = s.qty > 0;
+    const tot = active ? (o.perPers ? getNb() * o.prixPers * s.qty : o.fixe * s.qty) : 0;
+    const div = document.createElement('div');
+    div.className = 'opt-item' + (active ? ' selected' : ' off');
+    div.innerHTML = `
+      <div class="opt-info">
+        <div class="opt-name">${o.name}</div>
+        <div class="opt-desc">${o.desc}</div>
+        <div class="opt-price">${o.unit}</div>
+      </div>
+      <div class="opt-right">
+        <div class="qty-row" aria-label="Quantité ${o.name}">
+          <button type="button" class="q-btn" onclick="changeQty('${o.id}',-1)">−</button>
+          <span class="q-val">${s.qty}</span>
+          <button type="button" class="q-btn" onclick="changeQty('${o.id}',1)">+</button>
+        </div>
+        <div class="opt-total ${active ? '' : 'zero'}">${active ? fmt(tot) : '0 €'}</div>
+      </div>`;
+    el.appendChild(div);
+  });
+  updateTotals();
+}
+
+function syncFormulaUI() {
+  document.querySelectorAll('.fcard').forEach((card, index) => {
+    const selected = state.formule === index;
+    card.classList.toggle('selected', selected);
+    card.setAttribute('aria-pressed', String(selected));
+  });
+  const intro = document.getElementById('formule-intro');
+  if (intro) {
+    intro.textContent = state.keepMoment === false
+      ? `Choisissez une formule : les ${PIECES.length} propositions de la carte s’afficheront juste en dessous.`
+      : 'Choisissez une formule : sa sélection MiL prête à valider s’affichera directement dans la carte.';
+  }
+  buildInlineFormulaRecap();
+  const mobileBar = document.querySelector('.sticky-bar-mobile');
+  if (mobileBar) mobileBar.classList.toggle('is-empty', state.formule === null);
+  document.querySelectorAll('button[onclick="openModal()"]')
+    .forEach(button => button.disabled = state.formule === null);
+}
+
+function rebuild() { syncFormulaUI(); buildMomentChoice(); buildPieceSelector(); buildOpts(); buildBoxes(); }
+function toggleOpt(id) { state.options[id].qty = state.options[id].qty > 0 ? 0 : 1; state.options[id].on = state.options[id].qty > 0; rebuild(); }
+function changeQty(id, d) { state.options[id].qty = Math.max(0, state.options[id].qty + d); state.options[id].on = state.options[id].qty > 0; rebuild(); }
+
+function selectFormule(idx, el) {
+  const wasSelected = state.formule === idx;
+  selectedPieces = [];
+  selectedDips = [];
+
+  if (wasSelected) {
+    state.formule = null;
+  } else {
+    state.formule = idx;
+    if (state.keepMoment === null) state.keepMoment = true;
+  }
+
+  activePieceTab = 'all';
+  rebuild();
+}
+
+function resetForm() {
+  ['client-nom','client-contact','client-email','client-tel','evt-lieu','evt-date'].forEach(id => document.getElementById(id).value = '');
+  state.nbPers = 20;
+  document.getElementById('nb-pers-display').textContent = 20;
+  state.formule = null;
+  state.keepMoment = null;
+  selectedPieces = [];
+  selectedDips = [];
+  activePieceTab = 'all';
+  document.querySelectorAll('.fcard').forEach(c => c.classList.remove('selected'));
+  OPTIONS.forEach(o => { state.options[o.id].on = false; state.options[o.id].qty = 0; });
+  BOXES.forEach(b => { boxState[b.id] = { on: false, qty: 1 }; });
+  rebuild();
+}
+
+function copierDevis() {
+  const client = document.getElementById('client-nom').value || '[Client]';
+  const ht = calcF() + calcOpt() + calcBox();
+  const ttc = Math.round(ht * 1.1);
+  const opts = OPTIONS.filter(o => state.options[o.id].qty > 0).map(o => '• ' + o.name + ' ×' + state.options[o.id].qty).join('\n');
+  const boxes = BOXES.filter(b => boxState[b.id].on).map(b => '• ' + b.name + ' ×' + boxState[b.id].qty).join('\n');
+  const text = `DEVIS MiL TRAITEUR\n\nClient : ${client}\nPersonnes : ${getNb()}\nFormule : ${state.formule === null ? 'À sélectionner' : FORMULES[state.formule].name}\n${opts ? 'Options :\n' + opts + '\n' : ''}${boxes ? 'Box à partager :\n' + boxes + '\n' : ''}\nTotal TTC : ${fmt(ttc)}\n\nValable 30 jours — Minimum 20 personnes`;
+  navigator.clipboard.writeText(text).then(() => alert('Résumé copié !')).catch(() => alert('Non supporté sur ce navigateur'));
+}
+
+/* ---- FORMSPREE ---- */
+function buildRecapHTML() {
+  const nom = document.getElementById('client-nom').value || '—';
+  const contact = document.getElementById('client-contact').value || '—';
+  const email = document.getElementById('client-email').value || '—';
+  const tel = document.getElementById('client-tel').value || '—';
+  const date = document.getElementById('evt-date').value || '—';
+  const type = document.getElementById('evt-type').value;
+  const lieu = document.getElementById('evt-lieu').value || '—';
+  const ht = calcF() + calcOpt() + calcBox();
+  const ttc = Math.round(ht * 1.1);
+  const opts = OPTIONS.filter(o => state.options[o.id].qty > 0).map(o => o.name + ' ×' + state.options[o.id].qty).join(', ') || 'Aucune';
+  const boxes = BOXES.filter(b => boxState[b.id].on).map(b => b.name + ' ×' + boxState[b.id].qty).join(', ') || 'Aucune';
+  const sel = formatSelectionText(', ');
+  return `<strong>${nom} ${contact}</strong> · ${email} · ${tel}<br>
+    ${type} · ${date} · ${lieu}<br>
+    ${getNb()} pers. · Formule <strong>${state.formule === null ? 'À sélectionner' : FORMULES[state.formule].name}</strong><br>
+    Pièces : ${sel.pieces}<br>
+    Dips : ${sel.dips}<br>
+    <span class="recap-total">${fmt(ttc)} TTC</span>`;
+}
+
+function openModal() {
+  document.getElementById('modal-recap').innerHTML = buildRecapHTML();
+  document.getElementById('modal-body-default').style.display = '';
+  document.getElementById('modal-body-success').style.display = 'none';
+  document.getElementById('send-error').style.display = 'none';
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+function closeModalOutside(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModal();
+}
+
+async function sendFormspree() {
+  const btn = document.getElementById('btn-send');
+  btn.disabled = true;
+  btn.querySelector('span').textContent = 'Envoi en cours…';
+  document.getElementById('send-error').style.display = 'none';
+
+  const nom = document.getElementById('client-nom').value;
+  const contact = document.getElementById('client-contact').value;
+  const email = document.getElementById('client-email').value;
+  const tel = document.getElementById('client-tel').value;
+  const date = document.getElementById('evt-date').value;
+  const type = document.getElementById('evt-type').value;
+  const lieu = document.getElementById('evt-lieu').value;
+  const note = document.querySelector('.note-area').value;
+  const ht = calcF() + calcOpt() + calcBox();
+  const ttc = Math.round(ht * 1.1);
+  const opts = OPTIONS.filter(o => state.options[o.id].qty > 0).map(o => o.name + ' ×' + state.options[o.id].qty).join(', ') || 'Aucune';
+  const boxes = BOXES.filter(b => boxState[b.id].on).map(b => b.name + ' ×' + boxState[b.id].qty).join(', ') || 'Aucune';
+  const sel = formatSelectionText(', ');
+  const devisNum = document.getElementById('devis-num').textContent;
+
+  const payload = {
+    _subject: `Devis ${devisNum} — ${nom || 'Client'} · ${getNb()} pers. · ${fmt(ttc)}`,
+    devis_numero: devisNum,
+    client_nom: nom,
+    client_contact: contact,
+    client_email: email,
+    client_tel: tel,
+    evt_date: date,
+    evt_type: type,
+    evt_lieu: lieu,
+    nb_personnes: getNb(),
+    formule: state.formule === null ? 'À sélectionner' : FORMULES[state.formule].name,
+    pieces_choisies: sel.pieces,
+    dips_choisis: sel.dips,
+    statut_selection: selectionStatusText(),
+    options: opts,
+    boxes: boxes,
+    total_ht: fmt(ht),
+    total_ttc: fmt(ttc),
+    note: note || '—',
+  };
+
+  try {
+    const res = await fetch('https://formspree.io/f/xeevgogy', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    if (res.ok) {
+      document.getElementById('modal-body-default').style.display = 'none';
+      document.getElementById('modal-body-success').style.display = '';
+    } else {
+      throw new Error('Formspree error');
+    }
+  } catch (e) {
+    document.getElementById('send-error').style.display = 'block';
+    btn.disabled = false;
+    btn.querySelector('span').textContent = 'Envoyer à MiL Traiteur';
+  }
+}
+
+function initDates() {
+  const now = new Date();
+  const p = n => String(n).padStart(2,'0');
+  const f = d => `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()}`;
+  const valid = new Date(now); valid.setDate(valid.getDate() + 30);
+  document.getElementById('date-emission').textContent = f(now);
+  document.getElementById('date-validite').textContent = f(valid);
+  document.getElementById('devis-num').textContent = '2026-' + String(Math.floor(Math.random()*900)+100);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initDates();
+  rebuild();
+});
+</script>
+
+
+
+</form>
+
+
+
+</body></html>
