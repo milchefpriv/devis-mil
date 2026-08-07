@@ -6,7 +6,7 @@
 <title>Devis — MiL Traiteur</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;500;700;800;900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="MIL_files/css2_ogIh.css" rel="stylesheet">
 <style>
 :root {
   --ink: #0c0b09;
@@ -823,7 +823,42 @@ body {
 .box-c-total { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; padding-left: 2px; }
 
 /* LIENS */
-.hero-actions { margin-top: 20px; }
+.hero-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.btn-carte-hero,
+.btn-voir-carte {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-carte-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid rgba(201,169,110,.6);
+  border-radius: 999px;
+  background: rgba(255,255,255,.06);
+  color: var(--gold2);
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  transition: background .2s, border-color .2s, transform .15s;
+}
+.btn-carte-hero::after { content: '↗'; font-size: 14px; }
+.btn-carte-hero:active { transform: scale(.98); background: rgba(201,169,110,.14); }
+@media (hover:hover) {
+  .btn-carte-hero:hover {
+    background: rgba(201,169,110,.14);
+    border-color: var(--gold);
+  }
+}
 
 /* NOTE */
 .note-wrap { padding: 14px 20px 20px; }
@@ -1751,9 +1786,14 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
     <img src="data:image/png;base64,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" alt="MiL Traiteur" style="height:90px; width:auto; margin-bottom:16px; display:block;">
     <div class="hero-sub">Traiteur &amp; Événements · Paris</div>
     <div class="hero-meta">
-      <div class="hero-pill">N° <span id="devis-num">2026-695</span></div>
-      <div class="hero-pill">Émis le <span id="date-emission">06/08/2026</span></div>
-      <div class="hero-pill">Valable jusqu'au <span id="date-validite">05/09/2026</span></div>
+      <div class="hero-pill">N° <span id="devis-num">2026-672</span></div>
+      <div class="hero-pill">Émis le <span id="date-emission">07/08/2026</span></div>
+      <div class="hero-pill">Valable jusqu'au <span id="date-validite">06/09/2026</span></div>
+    </div>
+    <div class="hero-actions no-print">
+      <a class="btn-carte-hero" href="https://upload.leaf-card.fr/uploads/docs/b29945f8598a0c1342b56d44c20034ed.pdf" target="_blank" rel="noopener noreferrer" aria-label="Voir la carte MiL avec les pièces en images dans un nouvel onglet">
+        Voir la carte en images
+      </a>
     </div>
   </div>
 
@@ -1762,18 +1802,31 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
       <div class="step-line"><span class="step-number">1</span><div class="step-title">Comment souhaitez-vous composer ?</div></div>
       <div class="step-help">Validez une sélection MiL prête à servir, ou choisissez vous-même chaque pièce.</div>
     </div>
-    <div class="moment-choice" id="moment-choice"></div>
+    <div class="moment-choice" id="moment-choice">
+    <div class="moment-choice-inner">
+      <button type="button" class="moment-choice-btn active" aria-pressed="true" onclick="setCompositionMode(true)">
+        <span class="choice-chip">Recommandé</span>
+        <strong>Sélection MiL prête à valider</strong>
+        <span>Une composition équilibrée s’affiche directement dans la formule choisie.</span>
+      </button>
+      <button type="button" class="moment-choice-btn " aria-pressed="false" onclick="setCompositionMode(false)">
+        <span class="choice-chip">Sur mesure</span>
+        <strong>Je compose moi-même</strong>
+        <span>Accédez aux 28 propositions de la carte et choisissez chaque variété.</span>
+      </button>
+      <div class="choice-status"><strong>Cocktail Premium</strong> · sélection MiL prête à valider</div>
+    </div></div>
   </div>
 
   <div class="section col-main formula-step" id="formula-step">
     <div class="step-head">
       <div class="step-line"><span class="step-number">2</span><div class="step-title">Choisissez votre formule</div></div>
-      <div class="step-help" id="formule-intro">Comparez les formats selon le nombre de pièces, la composition et le prix par personne.</div>
+      <div class="step-help" id="formule-intro">Choisissez une formule : sa sélection MiL prête à valider s’affichera directement dans la carte.</div>
     </div>
 
     <div class="fcarousel" id="fcarousel">
 
-      <div class="fcard" onclick="selectFormule(0,this)">
+      <div class="fcard" onclick="selectFormule(0,this)" aria-pressed="false">
         <div class="fcard-check">✓</div>
         <div class="fcard-head">
           <div class="fcard-name">Cocktail Découverte</div>
@@ -1786,7 +1839,7 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
         </div>
         <div class="fcard-body">
           <div class="fcard-compo"><strong>4 variétés × 3 pièces</strong> — 12 pièces par personne · 1 variété Premium</div>
-          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="inline-chef-recap" data-inline-chef="" aria-live="polite" style="display: none;"></div>
           <div class="fsub-label">Composition du moment</div>
           <ul class="fpieces">
             <li><div class="fp-name">Guacamole truite fumée<em>Guacamole, truite fumée</em></div><span class="tag-prem">premium</span></li>
@@ -1798,7 +1851,7 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
         </div>
       </div>
 
-      <div class="fcard" onclick="selectFormule(1,this)">
+      <div class="fcard selected" onclick="selectFormule(1,this)" aria-pressed="true">
         <div class="fcard-check">✓</div>
         <div class="fcard-head">
           <div class="fcard-name">Cocktail Premium</div>
@@ -1811,7 +1864,16 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
         </div>
         <div class="fcard-body">
           <div class="fcard-compo"><strong>5 variétés × 3 pièces</strong> — 15 pièces par personne · 3 variétés Premium</div>
-          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="inline-chef-recap" data-inline-chef="" aria-live="polite" style="display: block;">
+    <div class="inline-chef-top">
+      <div>
+        <div class="inline-chef-title">Sélection MiL incluse</div>
+        <div class="inline-chef-sub">5 variétés · 15 pièces par personne</div>
+      </div>
+      <span class="inline-chef-badge">Prête à valider</span>
+    </div>
+    <ul class="inline-chef-list"><li>Noix de Saint-Jacques crème citron — premium</li><li>Verrine guacamole, truite, maïs — premium</li><li>Tataki de dorade — premium</li><li>Chèvre miel</li><li>Crevette crème coco gingembre citron vert</li></ul>
+    <div class="inline-chef-dips"><strong>Dips inclus :</strong> 1 dip au choix</div></div>
           <div class="fsub-label">Composition du moment</div>
           <ul class="fpieces">
             <li><div class="fp-name">Noix de Saint-Jacques crème citron<em>Noix de Saint-Jacques, crème citron</em></div><span class="tag-prem">premium</span></li>
@@ -1824,7 +1886,7 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
         </div>
       </div>
 
-      <div class="fcard" onclick="selectFormule(2,this)">
+      <div class="fcard" onclick="selectFormule(2,this)" aria-pressed="false">
         <div class="fcard-check">✓</div>
         <div class="fcard-head">
           <div class="fcard-name">Buffet Dînatoire</div>
@@ -1837,7 +1899,7 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
         </div>
         <div class="fcard-body">
           <div class="fcard-compo"><strong>6 variétés × 3 pièces</strong> — 18 pièces par personne · 2 chaudes · 1 live cooking</div>
-          <div class="inline-chef-recap" data-inline-chef aria-live="polite"></div>
+          <div class="inline-chef-recap" data-inline-chef="" aria-live="polite" style="display: none;"></div>
           <div class="fsub-label">Composition du moment</div>
           <ul class="fpieces">
             <li><div class="fp-name">Œufs de truite crème de melon<em>Œufs de truite, crème de melon</em></div><span class="tag-prem">premium</span></li>
@@ -1856,6 +1918,8 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
 
     
 
+
+    
 
     <div class="piece-builder" id="piece-builder" style="display:none"></div>
 </div>
@@ -1889,7 +1953,7 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
       <div class="field field-full"><label>Lieu</label><input type="text" id="evt-lieu" name="street-address" autocomplete="street-address" placeholder="Adresse ou nom de salle"></div>
     </div>
     <div class="pers-stepper">
-      <div class="pers-label">Nombre de <strong>personnes</strong></div>
+      <div class="pers-label"><strong>Nombre de personnes</strong></div>
       <div class="stepper">
         <button type="button" class="step-btn" onclick="changePerso(-5)">−</button>
         <span class="step-val" id="nb-pers-display">20</span>
@@ -1910,8 +1974,8 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
     <div class="sticky-bar">
       <div>
         <div class="sb-label">Total TTC</div>
-        <div class="sb-price" id="sb-ttc">—</div>
-        <div class="sb-sub" id="sb-sub">Choisissez une formule</div>
+        <div class="sb-price" id="sb-ttc">616 €</div>
+        <div class="sb-sub" id="sb-sub">20 pers. · estimation TTC</div>
       </div>
       <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
     </div>
@@ -1919,11 +1983,11 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
     <div class="section col-side">
       <div class="section-head"><div class="section-label">Récapitulatif</div></div>
       <div class="total-detail">
-        <div class="tline"><span class="tl">Formule (<span id="tl-fname">À sélectionner</span>)</span><span class="tv" id="tl-f">0 €</span></div>
+        <div class="tline"><span class="tl">Formule (<span id="tl-fname">Cocktail Premium</span>)</span><span class="tv" id="tl-f">560 €</span></div>
         <div class="tline options-summary"><span class="tl">Options</span><span class="tv" id="tl-opt">0 €</span></div>
-        <div class="tline"><span class="tl">Sous-total HT</span><span class="tv" id="tl-ht">0 €</span></div>
-        <div class="tline"><span class="tl">TVA 10%</span><span class="tv" id="tl-tva">0 €</span></div>
-        <div class="tline final"><span class="tl">Total TTC</span><span class="tv" id="tl-ttc">0 €</span></div>
+        <div class="tline"><span class="tl">Sous-total HT</span><span class="tv" id="tl-ht">560 €</span></div>
+        <div class="tline"><span class="tl">TVA 10%</span><span class="tv" id="tl-tva">56 €</span></div>
+        <div class="tline final"><span class="tl">Total TTC</span><span class="tv" id="tl-ttc">616 €</span></div>
         <div class="min-warn" id="min-warn">⚠ Minimum de commande : 20 personnes</div>
       </div>
     </div>
@@ -1978,11 +2042,11 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
   </div>
 
   <!-- sticky-bar mobile (hors sidebar) -->
-  <div class="sticky-bar-mobile no-print is-empty">
+  <div class="sticky-bar-mobile no-print">
     <div>
       <div class="sb-label">Total TTC</div>
-      <div class="sb-price" id="sb-ttc-mobile">—</div>
-      <div class="sb-sub" id="sb-sub-mobile">Choisissez une formule</div>
+      <div class="sb-price" id="sb-ttc-mobile">616 €</div>
+      <div class="sb-sub" id="sb-sub-mobile">20 pers. · estimation TTC</div>
     </div>
     <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
   </div>
