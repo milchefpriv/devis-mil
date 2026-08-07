@@ -1775,6 +1775,97 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
   .piece-filter-help{ margin-top:4px; }
   .piece-tabs{ padding-bottom:10px; }
 }
+
+
+/* Nombre de personnes directement dans la barre de total */
+.sticky-bar,
+.sticky-bar-mobile{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:8px 12px;
+}
+.sb-summary{ min-width:0; }
+.sb-people{
+  grid-column:1 / -1;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding-top:9px;
+  border-top:1px solid rgba(201,169,110,.22);
+}
+.sb-people-label{
+  font-size:11px;
+  font-weight:600;
+  color:rgba(255,255,255,.78);
+}
+.sb-stepper{
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  border:1px solid rgba(201,169,110,.48);
+  border-radius:999px;
+  background:rgba(255,255,255,.07);
+}
+.sb-step-btn{
+  width:32px;
+  height:30px;
+  border:0;
+  background:transparent;
+  color:var(--gold2);
+  font-family:'Poppins',sans-serif;
+  font-size:18px;
+  line-height:1;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.sb-step-btn:active{ background:rgba(201,169,110,.16); }
+.sb-step-btn:disabled{ opacity:.28; cursor:not-allowed; }
+.sb-step-val{
+  min-width:34px;
+  text-align:center;
+  color:var(--white);
+  font-size:13px;
+  font-weight:700;
+}
+.sb-step-unit{
+  padding-right:11px;
+  color:rgba(255,255,255,.66);
+  font-size:10px;
+}
+.btn-confirm:disabled{
+  opacity:.42;
+  cursor:not-allowed;
+  transform:none !important;
+}
+/* La barre reste visible avant le choix d'une formule : le nombre de personnes
+   peut donc être réglé avant que le prix apparaisse. */
+.sticky-bar-mobile.is-empty{ display:grid !important; }
+
+@media (min-width:1024px){
+  .sidebar .sticky-bar{
+    grid-template-columns:1fr;
+  }
+  .sidebar .sticky-bar .btn-confirm{
+    width:100%;
+  }
+  .sidebar .sticky-bar .sb-people{
+    grid-column:1;
+  }
+}
+
+@media (max-width:380px){
+  .sticky-bar-mobile{ gap:7px 8px; }
+  .sticky-bar-mobile .btn-confirm{
+    padding:10px 11px;
+    font-size:11px;
+  }
+  .sb-people-label{ font-size:10px; }
+}
+
 </style>
 </head>
 <body>
@@ -1952,14 +2043,6 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
       </div>
       <div class="field field-full"><label>Lieu</label><input type="text" id="evt-lieu" name="street-address" autocomplete="street-address" placeholder="Adresse ou nom de salle"></div>
     </div>
-    <div class="pers-stepper">
-      <div class="pers-label"><strong>Nombre de personnes</strong></div>
-      <div class="stepper">
-        <button type="button" class="step-btn" onclick="changePerso(-5)">−</button>
-        <span class="step-val" id="nb-pers-display">20</span>
-        <button type="button" class="step-btn" onclick="changePerso(+5)">+</button>
-      </div>
-    </div>
   </div>
 
 
@@ -1972,12 +2055,21 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
 
   <div class="sidebar no-print">
     <div class="sticky-bar">
-      <div>
+      <div class="sb-summary">
         <div class="sb-label">Total TTC</div>
-        <div class="sb-price" id="sb-ttc">616 €</div>
-        <div class="sb-sub" id="sb-sub">20 pers. · estimation TTC</div>
+        <div class="sb-price" id="sb-ttc">—</div>
+        <div class="sb-sub" id="sb-sub">Sélectionnez une formule</div>
       </div>
-      <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
+      <button class="btn-confirm" onclick="openModal()" disabled>Envoyer ma demande ✉</button>
+      <div class="sb-people">
+        <span class="sb-people-label">Nombre de personnes</span>
+        <div class="sb-stepper" aria-label="Nombre de personnes">
+          <button type="button" class="sb-step-btn" data-pers-minus onclick="changePerso(-5)" aria-label="Retirer 5 personnes" disabled>−</button>
+          <span class="sb-step-val" data-pers-display>20</span>
+          <span class="sb-step-unit">pers.</span>
+          <button type="button" class="sb-step-btn" onclick="changePerso(+5)" aria-label="Ajouter 5 personnes">+</button>
+        </div>
+      </div>
     </div>
 
     <div class="section col-side">
@@ -2042,13 +2134,22 @@ a[href*="photo"],a[href*="photos"],button[onclick*="photo"],button[onclick*="pho
   </div>
 
   <!-- sticky-bar mobile (hors sidebar) -->
-  <div class="sticky-bar-mobile no-print">
-    <div>
+  <div class="sticky-bar-mobile no-print is-empty">
+    <div class="sb-summary">
       <div class="sb-label">Total TTC</div>
-      <div class="sb-price" id="sb-ttc-mobile">616 €</div>
-      <div class="sb-sub" id="sb-sub-mobile">20 pers. · estimation TTC</div>
+      <div class="sb-price" id="sb-ttc-mobile">—</div>
+      <div class="sb-sub" id="sb-sub-mobile">Sélectionnez une formule</div>
     </div>
-    <button class="btn-confirm" onclick="openModal()">Envoyer ma demande ✉</button>
+    <button class="btn-confirm" onclick="openModal()" disabled>Envoyer ma demande ✉</button>
+    <div class="sb-people">
+      <span class="sb-people-label">Nombre de personnes</span>
+      <div class="sb-stepper" aria-label="Nombre de personnes">
+        <button type="button" class="sb-step-btn" data-pers-minus onclick="changePerso(-5)" aria-label="Retirer 5 personnes" disabled>−</button>
+        <span class="sb-step-val" data-pers-display>20</span>
+        <span class="sb-step-unit">pers.</span>
+        <button type="button" class="sb-step-btn" onclick="changePerso(+5)" aria-label="Ajouter 5 personnes">+</button>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -2475,9 +2576,18 @@ function changeBoxQty(id, d) {
   rebuild();
 }
 
+function syncPeopleDisplay() {
+  document.querySelectorAll('[data-pers-display]').forEach(el => {
+    el.textContent = state.nbPers;
+  });
+  document.querySelectorAll('[data-pers-minus]').forEach(button => {
+    button.disabled = state.nbPers <= 20;
+  });
+}
+
 function changePerso(delta) {
   state.nbPers = Math.max(20, state.nbPers + delta);
-  document.getElementById('nb-pers-display').textContent = state.nbPers;
+  syncPeopleDisplay();
   rebuild();
 }
 
@@ -2598,7 +2708,7 @@ function selectFormule(idx, el) {
 function resetForm() {
   ['client-nom','client-contact','client-email','client-tel','evt-lieu','evt-date'].forEach(id => document.getElementById(id).value = '');
   state.nbPers = 20;
-  document.getElementById('nb-pers-display').textContent = 20;
+  syncPeopleDisplay();
   state.formule = null;
   state.keepMoment = null;
   selectedPieces = [];
@@ -2732,6 +2842,7 @@ function initDates() {
 
 window.addEventListener('DOMContentLoaded', () => {
   initDates();
+  syncPeopleDisplay();
   rebuild();
 });
 </script>
